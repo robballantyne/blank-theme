@@ -1,0 +1,29 @@
+name: 'Main Nav Lower'
+items:
+    -
+        title: 'Page Four'
+        type: cms-page
+        code: ''
+        reference: page-four
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Page Five'
+        type: cms-page
+        code: ''
+        reference: page-five
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Page Six'
+        type: cms-page
+        code: ''
+        reference: page-six
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

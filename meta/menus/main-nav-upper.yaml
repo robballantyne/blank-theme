@@ -1,0 +1,29 @@
+name: 'Main Nav Upper'
+items:
+    -
+        title: 'Page One'
+        type: cms-page
+        code: ''
+        reference: page-one
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Page Two'
+        type: cms-page
+        code: ''
+        reference: page-two
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Page Three'
+        type: cms-page
+        code: ''
+        reference: page-three
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

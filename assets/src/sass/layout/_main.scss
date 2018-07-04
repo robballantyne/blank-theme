@@ -1,0 +1,19 @@
+
+body {
+  @if($debug-containers == true) {
+    border: 2px solid red;
+  }
+  background-color: $bg-primary;
+  color: $color-primary;
+}
+
+.main-container {
+  @if($debug-containers == true) {
+    border: 2px solid blue;
+  }
+  min-height: 80vh;
+  background-color: $bg-main-container;
+  main {
+    background-color: $bg-main;
+  }
+}

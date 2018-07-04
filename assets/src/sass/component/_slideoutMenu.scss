@@ -1,0 +1,59 @@
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: flex;
+}
+
+nav {
+  &.slideout-menu {
+    position: fixed;
+    left: auto; // auto for slide from right, 0 for slide from left
+    top: 0; //120px; // compensate for fixed immovable header
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    width: 290px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    display: none;
+    ul {
+      padding-left: 0;
+      margin: 0;
+      li {
+        list-style: none;
+        &:not(:last-child) {
+          margin-bottom: 0.5rem;
+        }
+        a {
+          outline: none; // Using border bottom on focus to maintain accessibility
+          text-decoration: none;
+          transition: border-bottom-color 0.5s;
+          padding-bottom: 2px;
+          border-bottom: 2px solid transparent; // For color transition
+          &:visited {
+            color: inherit;
+          }
+          &:hover, &:focus {
+            border-bottom: 2px solid $bg-brand-primary;
+          }
+        }
+        &.active {
+          a {
+            border-bottom: 2px solid $bg-brand-primary;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+
+/// Typography ///
+
+$font-sans-serif:  "Roboto", Helvetica, Verdana, sans-serif;
+$font-serif: Merriweather, Georgia, 'Times New Roman', serif;
+$font-mono: 'Source Code Pro', Courier, mono;
+
+
+$font-size: 1rem;
+$font-size-h1: 2rem;
+$font-size-h2: 1.8rem;
+$font-size-h3: 1.6rem;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-semibold: 500;
+$font-weight-bold: 700;
+
+
+
+/// Colors ///
+$bg-outside: #eee;
+$bg-primary: #fff;
+$bg-brand-primary: #1da0c1;
+$color-over-brand: #fff;
+$color-primary: #666;
+
+$bg-header-container: $bg-outside;
+$bg-header: $bg-primary;
+$bg-under-header-container: $bg-brand-primary;
+$bg-under-header: inherit;
+$bg-main-container: $bg-outside;
+$bg-main: $bg-primary;
+$bg-footer-container: $bg-brand-primary;
+$bg-footer: inherit;
+
+
+
+
+/// z-index values ///
+
+$z-index-normal: 0;
+$z-index-above: 10;
+$z-index-high: 20;
+$z-index-higher: 30;
+$z-index-highest: 40;
+$z-index-exceptional: 9999;
+
+
+
+/// Vendor Overrides ///
+
+
+/// Normalize Scss - These adjustments will enable vertical rhythm. Delete if not wanted
+
+$base-font-size: 16px;
+$base-unit: 'rem';
+$base-font-family: $font-sans-serif;
+
+
+/// Reflex Grid
+
+$reflex-xs: 320px;
+
+
+/// Hamburgers
+
+$hamburger-padding-x: 0;
+$hamburger-padding-y: 0;
+
+// Dev section
+$debug-containers: false;

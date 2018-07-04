@@ -1,0 +1,39 @@
+{
+  "name": "october-theme-blank",
+  "version": "1.0.0",
+  "description": "Blank October CMS theme with laravel mix/webpack support",
+  "main": "assets/src/js/app.js",
+  "scripts": {
+    "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --watch-poll --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robballantyne/october-theme-blank.git"
+  },
+  "author": "Dynamedia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robballantyne/october-theme-blank/issues"
+  },
+  "homepage": "https://github.com/robballantyne/october-theme-blank#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^4.5.2",
+    "glob-all": "^3.1.0",
+    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-webpack-plugin": "^2.1.5",
+    "laravel-mix": "^2.1.11",
+    "purify-css": "^1.2.5",
+    "purifycss-webpack": "^0.7.0"
+  },
+  "dependencies": {
+    "hamburgers": "^0.9.3",
+    "izimodal": "^1.5.1",
+    "jquery": "^3.3.1",
+    "normalize-scss": "^7.0.1",
+    "reflex-grid": "^2.0.3",
+    "slideout": "^1.0.1"
+  }
+}

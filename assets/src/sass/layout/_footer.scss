@@ -1,0 +1,14 @@
+.footer-container {
+  @if($debug-containers == true) {
+    border: 2px solid red;
+  }
+  min-height: 20vh;
+  background-color: $bg-footer-container;
+  footer {
+    @if($debug-containers == true) {
+      border: 2px solid blue;
+    }
+    background-color: $bg-footer;
+    color: $color-over-brand;
+  }
+}

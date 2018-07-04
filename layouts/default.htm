@@ -1,24 +1,64 @@
 description = "Default layout"
+
+[cookieBanner]
+include_css = 1
+hard_reload = 1
+update_selector = "#gdpr-reload"
+cookie_manager_page = "cookies"
+ignore_behaviour = "nothing"
+
+[staticMenu staticMenuMainNavUpper]
+code = "main-nav-upper"
+
+[staticMenu staticMenuMainNavLower]
+code = "main-nav-lower"
+
+[staticMenu staticMenuMobileNav]
+code = "mobile-nav"
 ==
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>{{ this.page.title }}</title>
-        {% styles %}
-        <link href="{{ [
-            'assets/css/app.css'
-        ]|theme }}" rel="stylesheet">
-    </head>
-    <body>
-        {% page %}
 
-        <script src="{{ [
-            '@jquery',
-            '@framework',
-            '@framework.extras',
-            'assets/js/app.js']|theme }}"></script>
+<html lang="en">
 
-        {% scripts %}
-    </body>
+<head>
+    {% partial 'layout/default/head' %}
+</head>
+
+<body>
+
+<div class="container-full header-container fixed slideoutMoveMe">
+    {% partial 'layout/default/header' %}
+</div>
+
+<div class="container-full under-header-container slideoutMoveMe">
+    {% partial 'layout/default/under-header' %}
+</div>
+
+
+<div id="slideout-wrapper">
+    <div class="container-full main-container">
+        {% partial 'layout/default/main' %}
+    </div>
+</div>
+
+<div class="container-full footer-container slideoutMoveMe">
+    {% partial 'layout/default/footer' %}
+</div>
+
+<nav class="grid" id="slideout-menu">
+    <div class="col-12">
+        {% partial 'navigation/mobile-nav' %}
+    </div>
+</nav>
+
+{% component 'cookieBanner' %}
+
+<script src="{{ 'assets/dist/js/manifest.js' | theme }}"></script>
+<script src="{{ 'assets/dist/js/vendor.js' | theme }}"></script>
+<script src="{{ 'assets/dist/js/app.js' | theme }}"></script>
+{% scripts %}
+
+
+</body>
+
 </html>

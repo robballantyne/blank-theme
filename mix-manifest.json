@@ -1,0 +1,12 @@
+{
+    "/assets/dist/js/vendor.js": "/assets/dist/js/vendor.js",
+    "/assets/dist/css/vendor.css": "/assets/dist/css/vendor.css",
+    "/assets/dist/css/app.css": "/assets/dist/css/app.css",
+    "/assets/dist/js/vendor.js.map": "/assets/dist/js/vendor.js.map",
+    "/assets/dist/css/vendor.css.map": "/assets/dist/css/vendor.css.map",
+    "/assets/dist/css/app.css.map": "/assets/dist/css/app.css.map",
+    "/assets/dist/js/app.js": "/assets/dist/js/app.js",
+    "/assets/dist/js/app.js.map": "/assets/dist/js/app.js.map",
+    "/assets/dist/js/manifest.js": "/assets/dist/js/manifest.js",
+    "/assets/dist/js/manifest.js.map": "/assets/dist/js/manifest.js.map"
+}

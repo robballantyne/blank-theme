@@ -1,0 +1,69 @@
+.header-container {
+  @if($debug-containers == true) {
+    border: 2px solid red;
+  }
+  background-color: $bg-header-container;
+  &.fixed {
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: $z-index-highest;
+  }
+  header {
+    @if($debug-containers == true) {
+      border: 2px solid blue;
+    }
+    background-color: $bg-header;
+    img {
+      &.logo {
+        width:200px;
+        max-width: 100%;
+      }
+    }
+    nav {
+      &#hidden-menu-trigger {
+        text-align: right;
+        button {
+          outline: none; // Color on focus for accessibility
+          &:focus {
+            .hamburger-inner {
+              background-color: $bg-brand-primary;
+              &:before, &:after {
+                background-color: $bg-brand-primary;
+              }
+            }
+          }
+        }
+      }
+      ul {
+        padding-left: 0;
+        margin: 0;
+        li {
+          list-style: none;
+          display: inline-block;
+          &:not(:last-child) {
+            margin-right: 1rem;
+          }
+          a {
+            outline: none; // Using border bottom on focus to maintain accessibility
+            text-decoration: none;
+            transition: border-bottom-color 0.5s;
+            padding-bottom: 2px;
+            border-bottom: 2px solid transparent; // For color transition
+            &:visited {
+              color: inherit;
+            }
+            &:hover, &:focus {
+              border-bottom: 2px solid $bg-brand-primary;
+            }
+          }
+          &.active {
+            a {
+              border-bottom: 2px solid $bg-brand-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}

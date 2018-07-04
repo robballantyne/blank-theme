@@ -1,0 +1,56 @@
+name: 'Mobile Nav'
+items:
+    -
+        title: 'Page One'
+        type: cms-page
+        code: ''
+        reference: page-one
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Page Two'
+        type: cms-page
+        code: ''
+        reference: page-two
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Page Three'
+        type: cms-page
+        code: ''
+        reference: page-three
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Page Four'
+        type: cms-page
+        code: ''
+        reference: page-four
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Page Five'
+        type: cms-page
+        code: ''
+        reference: page-five
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Page Six'
+        type: cms-page
+        code: ''
+        reference: page-six
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

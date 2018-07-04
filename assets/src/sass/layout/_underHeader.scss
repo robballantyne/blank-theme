@@ -1,0 +1,15 @@
+.under-header-container {
+  position: relative;
+  z-index: $z-index-higher;
+  @if($debug-containers == true) {
+    border: 2px solid green;
+  }
+  background-color: $bg-under-header-container;
+  color: $color-over-brand;
+  .under-header {
+    @if($debug-containers == true) {
+      border: 2px solid blue;
+    }
+    background-color: $bg-under-header;
+  }
+}
