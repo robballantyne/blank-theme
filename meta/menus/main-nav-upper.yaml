@@ -2,28 +2,49 @@ name: 'Main Nav Upper'
 items:
     -
         title: 'Page One'
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: page-one
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'Page Two'
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: page-two
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'Page Three'
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: page-three
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Contact Us'
+        type: url
+        url: '#_'
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: izimodal-trigger-contact
             isExternal: '0'

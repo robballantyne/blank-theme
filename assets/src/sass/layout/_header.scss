@@ -47,23 +47,23 @@
           a {
             outline: none; // Using border bottom on focus to maintain accessibility
             text-decoration: none;
-            transition: border-bottom-color 0.5s;
             padding-bottom: 2px;
             border-bottom: 2px solid transparent; // For color transition
-            &:visited {
-              color: inherit;
-            }
-            &:hover, &:focus {
-              border-bottom: 2px solid $bg-brand-primary;
-            }
           }
           &.active {
             a {
-              border-bottom: 2px solid $bg-brand-primary;
+              border-bottom: 2px solid lighten($bg-brand-primary,20%);
             }
           }
         }
       }
+    }
+  }
+  &.scrolled {
+    background-color: $bg-header-container-scrolled;
+    color: #fff;
+    header {
+      background-color: $bg-header-scrolled;
     }
   }
 }

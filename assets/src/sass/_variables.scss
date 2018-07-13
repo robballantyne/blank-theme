@@ -25,14 +25,32 @@ $bg-brand-primary: #1da0c1;
 $color-over-brand: #fff;
 $color-primary: #666;
 
-$bg-header-container: $bg-outside;
-$bg-header: $bg-primary;
+$color-link: $bg-brand-primary;
+
+$bg-header-container: rgba(255, 255, 255, 0.95);
+$bg-header-container-scrolled: rgba(0,0,0, 0.6);
+$bg-header: unset;
+$bg-header-scrolled: unset;
 $bg-under-header-container: $bg-brand-primary;
 $bg-under-header: inherit;
 $bg-main-container: $bg-outside;
 $bg-main: $bg-primary;
 $bg-footer-container: $bg-brand-primary;
 $bg-footer: inherit;
+
+$form-border-color: #c9c9c9;
+
+// Specific color declarations;
+$color-green: #5cb85c;
+$color-amber: #ec971f;
+$color-red: #d9534f;
+
+
+// Common color use
+
+$color-success: $color-green;
+$color-warning: $color-amber;
+$color-error: $color-red;
 
 
 
@@ -46,6 +64,11 @@ $z-index-higher: 30;
 $z-index-highest: 40;
 $z-index-exceptional: 9999;
 
+/// Forms ///
+
+$form-input-height: 2.2rem;
+$form-input-font-size: 1.3rem;
+$form-input-padding: 0 0.3rem 0 3rem;
 
 
 /// Vendor Overrides ///

@@ -1,0 +1,11 @@
+{% set posts = __SELF__.posts %}
+
+<ul class="post-list grid" id="posts-grid">
+    {% partial '@postloop' %}
+</ul>
+
+<div class="grid">
+    <div class="col-12" id="posts-paginator">
+        {% partial 'blogPosts/pagination' %}
+    </div>
+</div>

@@ -1,27 +1,27 @@
 webpackJsonp([1],{
 
-/***/ 12:
+/***/ 13:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(13);
+module.exports = __webpack_require__(14);
 
 
 /***/ }),
 
-/***/ 13:
+/***/ 14:
 /***/ (function(module, exports, __webpack_require__) {
 
 try {
     window.$ = window.jQuery = __webpack_require__(0);
     // Load jquery dependencies
-    __webpack_require__(14);
+    __webpack_require__(15);
 } catch (e) {
     console.log('jQuery not loaded');
 }
 
 /***/ }),
 
-/***/ 14:
+/***/ 15:
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
@@ -60,6 +60,8 @@ $(document).ready(function () {
             });
 
             slideoutMenu.on('beforeopen', function () {
+                $("#hidden-menu-trigger button").addClass('is-active');
+                $("#hidden-menu-trigger button").attr('aria-expanded', true);
                 $moveMe.each(function () {
                     $(this).css({
                         transition: 'transform 300ms ease',
@@ -69,6 +71,8 @@ $(document).ready(function () {
             });
 
             slideoutMenu.on('beforeclose', function () {
+                $("#hidden-menu-trigger button").removeClass('is-active');
+                $("#hidden-menu-trigger button").attr('aria-expanded', false);
                 $moveMe.each(function () {
                     $(this).css({
                         transition: 'transform 300ms ease',
@@ -102,21 +106,36 @@ $(document).ready(function () {
     $("#hidden-menu-trigger button").click(function () {
         $(this).blur();
         if ($(this).hasClass('is-active')) {
-            $(this).removeClass('is-active');
-            $(this).attr('aria-expanded', false);
             slideoutMenu.close();
         } else {
-            $(this).addClass('is-active');
-            $(this).attr('aria-expanded', true);
             slideoutMenu.open();
         }
     });
 
     padBody();
+
+    // Initialise any modals before select2
+    $('.iziModal').each(function () {
+        $(this).iziModal({
+            onOpening: function onOpening(modal) {
+                select2init(5); // Initialise any select2 inside a modal
+            },
+            onResize: function onResize(modal) {
+                select2init(5); // Initialise any select2 inside a modal
+            },
+            onfullscreen: function onfullscreen(modal) {
+                select2init(5); // Initialise any select2 inside a modal
+            }
+        });
+    });
+
+    createAlertModals();
+    select2init();
 });
 
 $(window).resize(function () {
     padBody();
+    select2init();
 });
 
 // Add padding-top equal to the height of a fixed header to the body
@@ -126,7 +145,69 @@ function padBody() {
     }
 }
 
+// Select2 for form select elements
+function select2init(delay) {
+    setTimeout(function () {
+        $('select.select2').select2({
+            minimumResultsForSearch: 20 // at least 20 results must be displayed
+        });
+        ;
+    }, delay ? delay : 0);
+}
+
+// Add alert modals to handle October flash messages
+function createAlertModals() {
+    $("<div></div>").attr('id', 'modal-alert-success').appendTo("body").iziModal({
+        title: 'Success',
+        subtitle: 'Alert',
+        headerColor: '#5cb85c',
+        width: 800,
+        timeout: 10000,
+        pauseOnHover: true,
+        timeoutProgressbar: true,
+        icon: "fa fa-check",
+        top: 0
+    });
+
+    $("<div></div>").attr('id', 'modal-alert-warning').appendTo("body").iziModal({
+        title: 'Warning',
+        subtitle: 'Alert',
+        headerColor: '#ec971f',
+        width: 800,
+        timeout: 10000,
+        pauseOnHover: true,
+        timeoutProgressbar: true,
+        icon: "fa fa-exclamation-triangle",
+        top: 0
+    });
+
+    $("<div></div>").attr('id', 'modal-alert-error').appendTo("body").iziModal({
+        title: 'Error',
+        subtitle: 'Alert',
+        headerColor: '#d9534f',
+        width: 800,
+        timeout: 10000,
+        pauseOnHover: true,
+        timeoutProgressbar: true,
+        icon: "fa fa-times",
+        top: 0
+    });
+}
+
+$('.izimodal-trigger-contact').on('click', function () {
+    $('#contact-modal').iziModal('open');
+});
+
+$(document).on('ajaxSetup', function (event, context) {
+    // Pass october flash messages on to iziModal to make things prettier
+    context.options.handleFlashMessage = function (message, type) {
+        var $modal = $("#modal-alert-" + type);
+        $modal.iziModal('setSubtitle', message);
+        $modal.iziModal('open');
+    };
+});
+
 /***/ })
 
-},[12]);
+},[13]);
 //# sourceMappingURL=app.js.map

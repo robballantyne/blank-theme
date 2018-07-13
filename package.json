@@ -34,6 +34,7 @@
     "jquery": "^3.3.1",
     "normalize-scss": "^7.0.1",
     "reflex-grid": "^2.0.3",
+    "select2": "^4.0.6-rc.1",
     "slideout": "^1.0.1"
   }
 }

@@ -1,12 +1,28 @@
-
+html {
+  overflow-x: hidden;
+}
 body {
   @if($debug-containers == true) {
     border: 2px solid red;
   }
+  transition: padding-top 0.3s ease-in-out;
   background-color: $bg-primary;
   color: $color-primary;
 }
 
+a {
+  transition: color 0.3s;
+  color: $color-link;
+  &:hover, &:focus {
+    color: lighten($color-link, 20%);
+  }
+  &:visited {
+    color: $color-link;
+    &:hover, &:focus {
+      color: lighten($color-link, 20%);
+    }
+  }
+}
 .main-container {
   @if($debug-containers == true) {
     border: 2px solid blue;

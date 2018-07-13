@@ -2,11 +2,25 @@
 
 @import "~normalize-scss/fork-versions/default/normalize";
 
+
+// Override reflex grid's very narrow pages by default on small screens // TODO find a better place for this
+@media (max-width: 767px) {
+  .container {
+    max-width: 100% !important;
+  }
+}
+
 @import "~reflex-grid/scss/reflex";
 
 @import "../../../../../modules/system/assets/css/framework.extras";
 
+@import "~select2/src/scss/core";
+
+@import "~izimodal/css/iziModal.css";
+
 @import "~hamburgers/_sass/hamburgers/hamburgers";
+
+
 
 
 

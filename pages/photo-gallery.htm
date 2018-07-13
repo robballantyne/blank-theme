@@ -1,0 +1,26 @@
+title = "Photo Gallery"
+url = "/photo-gallery"
+layout = "default"
+is_hidden = 0
+
+[galleryId rjgallery]
+idGallery = 1
+lang = "Gallery"
+jqueryinject = "no"
+thumbnail = "true"
+caption = "true"
+desc = "true"
+counter = "true"
+controls = "true"
+preload = 1
+mode = "lg-slide"
+speed = 600
+loop = "true"
+auto = "false"
+pause = 2000
+escKey = "true"
+height = 300
+width = 300
+resizer = "crop"
+==
+<h1>A photo gallery</h1>{% component 'rjgallery' %}

@@ -1,28 +1,40 @@
 name: 'Main Nav Lower'
 items:
     -
-        title: 'Page Four'
+        title: Blog
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
-        reference: page-four
+        reference: blog
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
-        title: 'Page Five'
+        title: 'Image Slider'
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
-        reference: page-five
+        reference: image-slider
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
-        title: 'Page Six'
+        title: 'Photo Gallery'
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
-        reference: page-six
+        reference: photo-gallery
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''

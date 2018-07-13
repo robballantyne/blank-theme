@@ -2,55 +2,84 @@ name: 'Mobile Nav'
 items:
     -
         title: 'Page One'
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: page-one
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'Page Two'
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: page-two
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'Page Three'
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: page-three
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
         title: 'Page Four'
+        nesting: ''
         type: cms-page
+        url: ''
         code: ''
         reference: page-four
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
-        title: 'Page Five'
+        title: 'Image Slider'
         type: cms-page
         code: ''
-        reference: page-five
+        reference: image-slider
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
     -
-        title: 'Page Six'
+        title: 'Photo Gallery'
         type: cms-page
         code: ''
-        reference: page-six
+        reference: photo-gallery
         viewBag:
             isHidden: '0'
             cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Contact Us'
+        nesting: ''
+        type: url
+        url: '#_'
+        code: ''
+        reference: ''
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: izimodal-trigger-contact
             isExternal: '0'

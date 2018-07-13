@@ -1,0 +1,66 @@
+
+
+<div class="masonry" style="..." id="{{ __SELF__ }}">
+    {% for image in gallery.images %}
+        <div class="item {{ (image.title or image.description) ? 'info' : 'no-info'}}" data-src="{{ image.path }}">
+            {% if loop.index is divisible by(4) %}
+                <div class="item__content item__content--small">
+            {% elseif loop.index is divisible by(3) %}
+                <div class="item__content item__content--medium">
+            {% else %}
+                <div class="item__content item__content--large">
+            {% endif %}
+                    <div class="img-container">
+
+                <a href="#{{ __SELF__ }}">
+                    <img src="{{ image.getThumb(width, height, resizer) }}" alt="{{ image.title }}" />
+                </a>
+                    </div>
+                    <div class="img-info">
+                        <div class="grid">
+                            <div class="col-12">
+                                <p>{{ image.title }}</p>
+                                <p>{{ image.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+        </div>
+
+    {% endfor %}
+</div>
+
+{% put scripts %}
+    <script>
+        $(document).ready(function() {
+            var {{ __SELF__ }} = $("#{{ __SELF__ }}").lightGallery({
+                // Elements
+                thumbnail   : {{ thumbnail }},
+                caption     : {{ caption }},
+                desc        : {{ desc }},
+                counter     : {{ counter }},
+                controls    : {{ controls }},
+                preload     : {{ preload }},
+
+                // Transitions
+                mode   : '{{ mode }}',
+                useCSS : true,
+                easing : 'linear',
+                speed  : {{ speed }},
+
+                // Navigation
+                hideControlOnEnd : false,
+                loop             : {{ loop }},
+                auto             : {{ auto }},
+                pause            : {{ pause }},
+                escKey           : {{ escKey }},
+                swipeThreshold    : 50,
+
+                lang : { allPhotos: '{{ lang }}' },
+            });
+        });
+    </script>
+{% endput %}

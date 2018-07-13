@@ -1,0 +1,33 @@
+{% for post in posts %}
+    <li class="col-12 col-md-6 align-self-stretch">
+        <div class="grid post">
+            <div class="col-12 col-sm-4 col-md-5 col-lg-4 align-self-stretch">
+                {% if post.featured_images|length > 0 %}
+                    {% set featuredImage = post.featured_images.first %}
+                    <a class="img-container" href="{{ post.url }}">
+                        <img class="thumbnail" src="{{ featuredImage.thumb(200, 200, "crop") }}" alt="{{ featuredImage.title ? featuredImage.title : 'First featured image' }}"/>
+                    </a>
+                {% endif %}
+            </div>
+
+            <div class="col-12 col-sm-8 col-md-7 col-lg-8">
+                <div class="grid">
+                    <div class="col-12">
+                        <h3 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                        <p class="info">
+                            Posted
+                            {% if post.categories.count %} in {% endif %}
+                            {% for category in post.categories %}
+                                <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                            {% endfor %}
+                            on {{ post.published_at|date('M d, Y') }}
+                        </p>
+                        <p class="excerpt">{{ post.summary|raw }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+{% else %}
+    <li class="no-data">{{ noPostsMessage }}</li>
+{% endfor %}

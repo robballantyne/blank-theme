@@ -1,4 +1,4 @@
-description = "Single column layout"
+description = "2 Column Right Sidebar"
 
 [cookieBanner]
 include_css = 1
@@ -42,7 +42,11 @@ formId = 1
     <div class="container-full main-container">
         <main class="container">
             <div class="grid">
-                <div class="col-12">
+                <div class="col-12 col-md-3">
+                    {% partial 'layout/2-column/sidebar' %}
+                </div>
+
+                <div class="col-12 col-md-9">
                     {% page %}
                 </div>
             </div>

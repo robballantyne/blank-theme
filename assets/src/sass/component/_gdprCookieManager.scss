@@ -1,3 +1,25 @@
 .gdpr-cookie-manager {
   background-color: #fff;
 }
+.gdpr-banner {
+  form {
+    background-color: inherit;
+    color: inherit;
+  }
+  button {
+    transition: all 0.5s;
+    &.gdpr-banner__button--opt-in {
+      background-color: $color-success;
+      &:hover, &:focus {
+        background-color: darken($color-success, 10%);
+      }
+    }
+    &.gdpr-banner__button--opt-out {
+      background-color: $color-error;
+      &:hover, &:focus {
+        background-color: darken($color-error, 10%);
+      }
+    }
+
+  }
+}

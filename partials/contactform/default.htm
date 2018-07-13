@@ -1,0 +1,107 @@
+
+
+    {{ form_ajax('onInitiateSend', ['data-request-flash'], { class: 'grid'}) }}
+    {% if __SELF__.form.is_include_name %}
+        <div class="col-12">
+            <div class="wrap label-above">
+                <label for="contact-form-name" {{  __SELF__.form.is_require_name ? "class='required'" : ""}}>Name:</label>
+            </div>
+            <div class="wrap input icon name">
+                <input
+                    type="text"
+                    name="name"
+                    id="contact-form-name"
+                    placeholder=""
+                    {{  __SELF__.form.is_require_name ? "required" : ""}}
+                />
+            </div>
+        </div>
+        {% endif %}
+
+        {% if __SELF__.form.is_include_email %}
+        <div class="col-12">
+            <div class="wrap label-above">
+                <label for="contact-form-email" {{  __SELF__.form.is_require_email ? "class='required'" : ""}}>Email:</label>
+            </div>
+            <div class="wrap input icon email">
+                <input
+                    type="email"
+                    name="email"
+                    id="contact-form-email"
+                    placeholder=""
+                    {{  __SELF__.form.is_require_email ? "required" : ""}}
+                />
+            </div>
+        </div>
+        {% endif %}
+
+        {% if __SELF__.form.is_include_telephone %}
+        <div class="col-12">
+            <div class="wrap label-above">
+                <label for="contact-form-email" {{  __SELF__.form.is_require_telephone ? "class='required'" : ""}}>Telephone:</label>
+            </div>
+            <div class="wrap input icon telephone">
+                <input
+                        type="tel"
+                        name="telephone"
+                        id="contact-form-telephone"
+                        placeholder=""
+                        {{  __SELF__.form.is_require_telephone ? "required" : ""}}
+                />
+            </div>
+        </div>
+        {% endif %}
+
+        {% if __SELF__.form.is_include_subject %}
+        <div class="col-12">
+            <div class="wrap label-above">
+                <label for="contact-form-subject">Subject:</label>
+            </div>
+
+            {% if __SELF__.form.is_freeform_subject %}
+            <div class="wrap input icon subject">
+                <input
+                    type="text"
+                    name="subject"
+                    id="contact-form-subject"
+                    placeholder=""
+                />
+            </div>
+            {% else %}
+            <div class="wrap icon subject select">
+                <select id="contact-form-subject" class="select2" name="subjectId">
+                    {% for subject in __SELF__.form.subjects %}
+                    <option value='{{subject.id}}'>{{subject.title}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <div class="col-12">
+            <div class="wrap label-above">
+                <label for="contact-form-message" class="required">Message:</label>
+            </div>
+            <div class="wrap text icon message">
+                <textarea placeholder="Your message..." name="messagebody" id="contact-form-message" required></textarea>
+            </div>
+        </div>
+        {#<div id="loading">Sending Message...</div>#}
+
+        {#<div id="errors"></div>#}
+
+        {#<div id="success" style="text-align: center;">#}
+            {#{% if __SELF__.canCheckCaptcha %}#}
+            {#<div class="captcha-container">#}
+                {#<div class="g-recaptcha" data-sitekey="{{__SELF__.getRecaptchaSiteKey}}"></div>#}
+            {#</div>#}
+            {#{% endif %}#}
+        <div class="col-12 align-content-center">
+            <button type="submit" data-attach-loading class="" value="send">Send</button>
+        </div>
+
+    </form>
+
+
+

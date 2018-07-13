@@ -1,0 +1,3 @@
+{% if posts.lastPage > posts.currentPage %}
+<button data-request="onLoadMoreBlogPosts" data-request-data="page: {{ posts.currentPage + 1 }}"data-attach-loading>Load more</button>
+{% endif %}
