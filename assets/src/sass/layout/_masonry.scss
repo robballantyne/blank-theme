@@ -3,21 +3,25 @@
   column-gap: 0;
   counter-reset: item-counter;
 
-  @media screen and (min-width: 400px) {
+  @include breakpoint-xxs {
+    column-count: 2;
+  }
+  @include breakpoint-xs-plus {
     column-count: 2;
   }
 
-  @media screen and (min-width: 800px) {
+  @include breakpoint-md-plus {
     column-count: 3;
   }
 
-  @media screen and (min-width: 1200px) {
+  @include breakpoint-lg-plus {
     column-count: 4;
   }
 
-  //@media screen and (min-width: 1100px) {
+  //@include breakpoint-xlg-plus {
   //  column-count: 5;
   //}
+
 }
 
 .item {
@@ -63,6 +67,7 @@
     height: 70%;
     box-shadow: 0 8px 6px -6px #999;
     img {
+      object-fit: cover;
       width: 100%;
       height:100%;
     }

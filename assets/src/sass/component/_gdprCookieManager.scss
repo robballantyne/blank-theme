@@ -50,7 +50,7 @@
         background: $color-green;
       }
     }
-    @media all and (min-width: 400px){
+    @include breakpoint-xs-plus {
       flex-direction: row;
       .gdpr-cookie-manager__cookie-toggle {
         flex: 0 0 100px;

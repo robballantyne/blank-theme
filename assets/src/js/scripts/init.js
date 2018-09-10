@@ -4,7 +4,7 @@ $( document ).ready(function() {
 
     disableSlideoutOn('.gdpr-cookie-manager__cookies');
     var moveFixedElements = true;
-    var width = 290;
+    var width = 240;
     var side = 'right';
     var slideoutMenu = new Slideout({
         'panel': document.getElementById('slideout-wrapper'),
