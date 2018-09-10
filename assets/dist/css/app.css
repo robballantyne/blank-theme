@@ -542,6 +542,10 @@ button:focus, button:hover {
   cursor: pointer;
 }
 
+button.hamburger {
+  background: transparent;
+}
+
 .slideout-panel {
   position: relative;
   z-index: 1;

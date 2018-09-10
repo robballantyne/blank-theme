@@ -15,4 +15,7 @@ button {
     background-color: lighten($bg-brand-primary, 10%);
     cursor: pointer;
   }
+  &.hamburger {
+      background: transparent;
+  }
 }

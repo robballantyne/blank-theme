@@ -119,15 +119,21 @@ $( window ).resize(function() {
 });
 
 // Desktop menu open/close logic
-$('nav ul').on('mouseenter focus click', 'li.dropdown a', function (e) {
-        if (!$(this).closest('li.dropdown').hasClass('open')) {
-            e.preventDefault();
-            $(this).closest('li.dropdown').siblings().removeClass('open').find('li').removeClass('open');
-            $(this).closest('li.dropdown').children().removeClass('open').find('li').removeClass('open');
-            $(this).closest('li.dropdown').addClass("open");
-            $('body').addClass('menu-open');
-        }
+$('nav ul').on('click focus mouseenter', 'li.dropdown a', function (e) {
+    let $initiator = $(this);
+
+    if (!$initiator.closest('li.dropdown').hasClass('open')) {
+        e.preventDefault();
+    }
+    setTimeout(function() {
+        $initiator.closest('li.dropdown').siblings().removeClass('open').find('li').removeClass('open');
+        $initiator.closest('li.dropdown').children().removeClass('open').find('li').removeClass('open');
+        $initiator.closest('li.dropdown').addClass("open");
+        $('body').addClass('menu-open');
+    }, 200, $initiator);
+
 });
+
 $(document).on('click focus', 'body.menu-open' , function(e) {
    if ($(e.target).closest('li.open').length === 0) {
     $('li.open').removeClass('open');
