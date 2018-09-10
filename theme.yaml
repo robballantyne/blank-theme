@@ -3,3 +3,29 @@ author: Dynamedia
 description: Base scaffold.
 homepage: 'https://dynamedia.uk'
 code: base
+
+require:
+- Rainlab.Pages
+- Rainlab.Sitemap
+- Rainlab.Blog
+- Offline.Gdpr
+- Dynamedia.Items
+- Dynamedia.Contactform
+
+form:
+  tabs:
+    stretch: true
+    fields:
+      site_name:
+        tab: Detail
+        label: Site Name
+        placeholder: Client site name
+      is_ga_enabled:
+        tab: Analytics
+        type: switch
+        label: Enable Google Anlytics
+        default: true
+      ga_identifier:
+        tab: Analytics
+        label: Google Analytics tracking ID
+        placeholder: UA-12345678-01

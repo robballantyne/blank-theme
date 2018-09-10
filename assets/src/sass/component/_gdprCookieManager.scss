@@ -41,13 +41,14 @@
       }
     }
   }
-  .gdpr-cookie-manager__cookie-details {
 
-  }
   .gdpr-cookie-manager__cookie {
     flex-direction: column;
     .gdpr-cookie-manager__cookie-toggle {
       flex: 0 0 40px;
+      .tgl:checked + .tgl-btn {
+        background: $color-green;
+      }
     }
     @media all and (min-width: 400px){
       flex-direction: row;

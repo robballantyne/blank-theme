@@ -662,6 +662,10 @@ nav.slideout-menu ul li.active a:hover, nav.slideout-menu ul li.active a:focus {
           flex: 0 0 40px;
 }
 
+.gdpr-cookie-manager .gdpr-cookie-manager__cookie .gdpr-cookie-manager__cookie-toggle .tgl:checked + .tgl-btn {
+  background: #5cb85c;
+}
+
 @media all and (min-width: 400px) {
   .gdpr-cookie-manager .gdpr-cookie-manager__cookie {
     -webkit-box-orient: horizontal;
