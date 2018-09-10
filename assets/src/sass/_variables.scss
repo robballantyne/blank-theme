@@ -38,6 +38,26 @@ $bg-main: $bg-primary;
 $bg-footer-container: $bg-brand-primary;
 $bg-footer: inherit;
 
+    // Menus
+$color-desktop-menu: $bg-brand-primary;
+$color-desktop-menu-highlighted: lighten($color-desktop-menu, 20%);
+$color-desktop-menu-active: lighten($color-desktop-menu, 22%);
+$bg-desktop-menu-subitem: #eee;
+$bg-desktop-menu-subitem-highlighted: lighten($bg-brand-primary, 20%);
+$color-desktop-menu-subitem: $bg-brand-primary;
+$color-desktop-menu-subitem-highlighted: #fff;
+$color-desktop-menu-subitem-active: #fff;
+$bg-slideout-menu: #fff;
+$color-slideout-menu: $bg-brand-primary;
+$color-slideout-menu-highlighted: #fff;
+$color-slideout-menu-active: lighten($bg-brand-primary, 30%);
+$bg-slideout-menu-highlighted: lighten($bg-brand-primary, 20%);
+$bg-slideout-menu-active: lighten($bg-brand-primary, 20%);
+
+    // Modals
+$bg-iziModal-header: $bg-brand-primary;
+$color-iziModal-header: #fff;
+
 $form-border-color: #c9c9c9;
 
 // Specific color declarations;

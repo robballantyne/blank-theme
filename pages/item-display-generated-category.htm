@@ -1,0 +1,11 @@
+title = "Generated Category Item Display"
+url = "/item/:categorySlug/:itemSlug"
+layout = "default"
+is_hidden = 0
+
+[showItem]
+itemSlug = "{{ :itemSlug }}"
+typeSlug = "{{ :typeSlug }}"
+categorySlug = "{{ :categorySlug }}"
+==
+{% component 'showItem' %}

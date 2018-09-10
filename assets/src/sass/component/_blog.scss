@@ -56,6 +56,103 @@
   }
 }
 
+.blog-post {
+  h1 {
+    margin-bottom: 1rem;
+  }
+  p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .featured-image-container {
+    height: 75vh;
+    max-height: 400px;
+    position: relative;
+    color: #fff;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      bottom: 15px;
+      left: 15px;
+      background-color: rgba(#666, 0.4);
+    }
+    img {
+      object-fit: cover;
+      max-height: inherit;
+      height: 100%;
+      width: 100%;
+    }
+    .info-container {
+      position: absolute;
+      top: 15px;
+      right: 0;
+      bottom: 15px;
+      left: 0;
+      z-index: 1;
+      padding: 15px 30px;
+      a {
+        color: inherit;
+      }
+    }
+  }
+  .float-container {
+    float: left;
+    img {
+      float: left;
+      clear: both;
+      margin: 0 15px 15px 0;
+      &:nth-of-type(2n) {
+        float: right;
+        clear: both;
+        margin: 0 0 15px 15px;
+      }
+    }
+  }
+  .comments-container {
+    // Intense debate
+      #idc-container {
+        max-width: unset;
+        a {
+          transition: 0.3s;
+          margin-right: 7px!important;
+          color: $bg-brand-primary!important;
+          text-decoration: none!important;
+
+          &:hover {
+            color: lighten($bg-brand-primary, 10%)!important;
+          }
+        }
+        textarea.idc-text_noresize {
+          background: unset;
+          font: unset;
+          font-family: $font-sans-serif;
+          font-size: 1.3rem;
+          line-height: 1.1;
+          padding: 7px;
+          color: $color-primary!important;
+          box-sizing: border-box;
+          resize: none;
+          &::placeholder {
+            color: lighten($color-primary, 10%)!important;
+          }
+        }
+        .idc-loginbtn_wordpress {
+          display: none;
+        }
+        .idc-c-h {
+          background: unset;
+          background-color: #eee;
+        }
+      }
+
+    #IDfrmHeaderLogin {
+      padding: 15px 15px 0 15px;
+    }
+  }
+}
+
 #posts-paginator {
   button {
     width: 100%;

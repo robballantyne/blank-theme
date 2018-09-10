@@ -1,10 +1,12 @@
 html {
   overflow-x: hidden;
+  font-size: 16px;
 }
 body {
   @if($debug-containers == true) {
     border: 2px solid red;
   }
+  font-size: 1rem;
   transition: padding-top 0.3s ease-in-out;
   background-color: $bg-primary;
   color: $color-primary;

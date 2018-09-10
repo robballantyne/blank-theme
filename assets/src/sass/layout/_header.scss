@@ -10,54 +10,23 @@
     z-index: $z-index-highest;
   }
   header {
-    @if($debug-containers == true) {
+    @if ($debug-containers == true) {
       border: 2px solid blue;
     }
     background-color: $bg-header;
-    img {
-      &.logo {
-        width:200px;
-        max-width: 100%;
+    .brand-space {
+      a {
+        display: block;
+        max-width: 90%;
       }
-    }
-    nav {
-      &#hidden-menu-trigger {
-        text-align: right;
-        button {
-          outline: none; // Color on focus for accessibility
-          &:focus {
-            .hamburger-inner {
-              background-color: $bg-brand-primary;
-              &:before, &:after {
-                background-color: $bg-brand-primary;
-              }
-            }
-          }
-        }
-      }
-      ul {
-        padding-left: 0;
-        margin: 0;
-        li {
-          list-style: none;
-          display: inline-block;
-          &:not(:last-child) {
-            margin-right: 1rem;
-          }
-          a {
-            outline: none; // Using border bottom on focus to maintain accessibility
-            text-decoration: none;
-            padding-bottom: 2px;
-            border-bottom: 2px solid transparent; // For color transition
-          }
-          &.active {
-            a {
-              border-bottom: 2px solid lighten($bg-brand-primary,20%);
-            }
-          }
+      img {
+        &.logo {
+          width: 100%;
         }
       }
     }
+    @import "../component/navigation/desktop";
+    @import "../component/navigation/mobile";
   }
   &.scrolled {
     background-color: $bg-header-container-scrolled;

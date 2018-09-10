@@ -1,0 +1,16 @@
+nav {
+  &#hidden-menu-trigger {
+    text-align: right;
+    button {
+      outline: none; // Color on focus for accessibility
+      &:focus {
+        .hamburger-inner {
+          background-color: $bg-brand-primary;
+          &:before, &:after {
+            background-color: $bg-brand-primary;
+          }
+        }
+      }
+    }
+  }
+}

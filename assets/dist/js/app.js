@@ -28,6 +28,7 @@ $(document).ready(function () {
 
     /// Slideout.js ///
 
+    disableSlideoutOn('.gdpr-cookie-manager__cookies');
     var moveFixedElements = true;
     var width = 290;
     var side = 'right';
@@ -128,15 +129,42 @@ $(document).ready(function () {
             }
         });
     });
-
     createAlertModals();
     select2init();
+    unwrapImages();
+    prepareMainMenu();
 });
 
 $(window).resize(function () {
     padBody();
     select2init();
 });
+
+// Desktop menu open/close logic
+$('nav ul').on('mouseenter focus click', 'li.dropdown a', function (e) {
+    if (!$(this).closest('li.dropdown').hasClass('open')) {
+        e.preventDefault();
+        $(this).closest('li.dropdown').siblings().removeClass('open').find('li').removeClass('open');
+        $(this).closest('li.dropdown').children().removeClass('open').find('li').removeClass('open');
+        $(this).closest('li.dropdown').addClass("open");
+        $('body').addClass('menu-open');
+    }
+});
+$(document).on('click focus', 'body.menu-open', function (e) {
+    if ($(e.target).closest('li.open').length === 0) {
+        $('li.open').removeClass('open');
+        $('body').removeClass('menu-open');
+    }
+});
+
+$(document).keyup(function (e) {
+    if (e.keyCode == 27) {
+        // escape key maps to keycode `27`
+        $('li.open').removeClass('open');
+        $('body').removeClass('menu-open');
+    }
+});
+// End desktop menu logic
 
 // Add padding-top equal to the height of a fixed header to the body
 function padBody() {
@@ -147,6 +175,9 @@ function padBody() {
 
 // Select2 for form select elements
 function select2init(delay) {
+    // Add select2 class to elements we don't control
+    $('select#gdpr').addClass('select2'); // OFFLINE GDPR plugin.
+
     setTimeout(function () {
         $('select.select2').select2({
             minimumResultsForSearch: 20 // at least 20 results must be displayed
@@ -194,9 +225,26 @@ function createAlertModals() {
     });
 }
 
+function unwrapImages() {
+    $("p:has(img)").each(function () {
+        $(this).before($(this).find("img"));
+        if (!$.trim(this.innerHTML).length) $(this).remove();
+    });
+}
+
+function prepareMainMenu() {
+    $("nav ul li:has(ul)").addClass('dropdown');
+    $("nav ul li.dropdown:first > a").append(" <i class='fa fa-caret-down'></i>");
+    $("nav ul li.dropdown:not(:first) > a").append(" <i class='fa fa-caret-right'></i>");
+}
+
 $('.izimodal-trigger-contact').on('click', function () {
     $('#contact-modal').iziModal('open');
 });
+
+function disableSlideoutOn(identifier) {
+    $(identifier).attr('data-slideout-ignore', '');
+}
 
 $(document).on('ajaxSetup', function (event, context) {
     // Pass october flash messages on to iziModal to make things prettier

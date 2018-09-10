@@ -17,6 +17,13 @@
 
 nav {
   &.slideout-menu {
+    &.slideout-menu-right {
+      box-shadow: inset 4px 0px 5px 0px rgba(0, 0, 0, 0.25);
+    }
+    &.slideout-menu-left {
+      box-shadow: inset -4px 0px 5px 0px rgba(0, 0, 0, 0.25);
+    }
+    background-color: $bg-slideout-menu;
     position: fixed;
     left: auto; // auto for slide from right, 0 for slide from left
     top: 0; //120px; // compensate for fixed immovable header
@@ -24,6 +31,7 @@ nav {
     right: 0;
     z-index: 0;
     width: 290px;
+    padding-top: 20px;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     display: none;
@@ -32,19 +40,25 @@ nav {
       margin: 0;
       li {
         list-style: none;
-        &:not(:last-child) {
-          margin-bottom: 0.5rem;
-        }
         a {
           outline: none; // Using border bottom on focus to maintain accessibility
           text-decoration: none;
-          transition: border-bottom-color 0.5s;
-          padding-bottom: 2px;
-          border-bottom: 2px solid transparent; // For color transition
+          display: block;
+          padding: 5px 15px;
+          color: $color-slideout-menu;
+          transition: background-color 0.1s ease-in-out;
+          &:hover, &:focus {
+            box-shadow: inset 4px 0px 5px 0px rgba(0, 0, 0, 0.25);
+            background-color: $bg-slideout-menu-highlighted;
+            color: $color-slideout-menu-highlighted;
+          }
         }
         &.active {
           a {
-            border-bottom: 2px solid lighten($bg-brand-primary, 20%);
+            color: $color-slideout-menu-active;
+            &:hover, &:focus {
+              color: $color-slideout-menu-highlighted;
+            }
           }
         }
       }

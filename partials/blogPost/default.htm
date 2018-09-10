@@ -1,0 +1,68 @@
+{% set post = __SELF__.post %}
+
+<article class="grid blog-post">
+
+    {% if post.featured_images.count %}
+    <div class="col-12 featured-image-container">
+        <img src="{{ post.featured_images.first.path }}">
+
+        <div class="grid info-container align-end">
+            <div class="col-12">
+                <h1>
+                {{ post.title }}
+                </h1>
+                <p>
+                Posted
+                {% if post.categories.count %} in
+                    {% for category in post.categories %}
+                        <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                {% endif %}
+                on {{ post.published_at|date('M d, Y') }}
+                </p>
+                <p>
+                    <script>
+                        var idcomments_acct = '8c16f12c40da44294b09f6fc8fbf952a';
+                        var idcomments_post_id;
+                        var idcomments_post_url;
+                    </script>
+                    <script type="text/javascript" src="https://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    {% else %}
+    <div class="col-12">
+        <h1>
+            {{ post.title }}
+        </h1>
+        <p>
+        Posted
+        {% if post.categories.count %} in
+            {% for category in post.categories %}
+                <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+        {% endif %}
+        on {{ post.published_at|date('M d, Y') }}
+        </p>
+    </div>
+
+    {% endif %}
+
+    <div class="col-12">
+        <div class="float-container">
+            {{ post.content_html|raw }}
+        </div>
+    </div>
+
+    <div class="col-12 comments-container">
+        <script>
+            var idcomments_acct = '8c16f12c40da44294b09f6fc8fbf952a';
+            var idcomments_post_id;
+            var idcomments_post_url;
+        </script>
+        <span id="IDCommentsPostTitle" style="display:none"></span>
+        <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+    </div>
+</article>

@@ -1,14 +1,30 @@
 .footer-container {
+  position: relative;
+  z-index: $z-index-higher;
   @if($debug-containers == true) {
     border: 2px solid red;
   }
-  min-height: 20vh;
+  //min-height: 20vh;
   background-color: $bg-footer-container;
   footer {
     @if($debug-containers == true) {
       border: 2px solid blue;
     }
+    position: relative;
     background-color: $bg-footer;
     color: $color-over-brand;
+
+    .by-line {
+      margin: 10px;
+      position: absolute;
+      bottom:5px;
+      right:25px;
+      text-align: right;
+      color: #fff;
+      a {
+        color:inherit;
+      }
+    }
   }
+
 }

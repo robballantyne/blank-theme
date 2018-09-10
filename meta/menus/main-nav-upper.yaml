@@ -41,10 +41,25 @@ items:
             isExternal: '0'
     -
         title: 'Contact Us'
+        nesting: ''
         type: url
         url: '#_'
         code: ''
+        reference: ''
+        cmsPage: ''
+        replace: ''
         viewBag:
             isHidden: '0'
             cssClass: izimodal-trigger-contact
+            isExternal: '0'
+    -
+        title: 'All Categories'
+        nesting: '1'
+        type: dynamedia-items-categories-all
+        code: ''
+        cmsPage: services-list
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
             isExternal: '0'

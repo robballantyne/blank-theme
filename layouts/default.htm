@@ -1,11 +1,10 @@
 description = "Single column layout"
 
 [cookieBanner]
-include_css = 1
+include_css = 0
 hard_reload = 1
 update_selector = "#gdpr-reload"
 cookie_manager_page = "cookies"
-ignore_behaviour = "nothing"
 
 [staticMenu staticMenuMainNavUpper]
 code = "main-nav-upper"
@@ -20,7 +19,6 @@ code = "mobile-nav"
 formId = 1
 ==
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
@@ -55,7 +53,7 @@ formId = 1
     {% partial 'layout/default/footer' %}
 </div>
 
-<nav class="grid" id="slideout-menu">
+<nav class="grid grid-bleed" id="slideout-menu">
     <div class="col-12">
         {% partial 'navigation/mobile-nav' %}
     </div>
