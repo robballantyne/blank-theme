@@ -1,4 +1,3 @@
-
 /// Typography ///
 
 $font-sans-serif:  "Roboto", Helvetica, Verdana, sans-serif;
@@ -103,7 +102,17 @@ $base-font-family: $font-sans-serif;
 
 /// Reflex Grid
 
-$reflex-xs: 320px;
+$reflex-xs: 576px;
+$reflex-sm: 768px;
+$reflex-md: 992px;
+$reflex-lg: 1200px;
+$reflex-xlg: 1600px;
+
+$reflex-xxs-max:    ($reflex-xs - 1);
+$reflex-xs-max:     ($reflex-sm - 1);
+$reflex-sm-max:     ($reflex-md - 1);
+$reflex-md-max:     ($reflex-lg - 1);
+$reflex-lg-max:     ($reflex-xlg - 1);
 
 
 /// Hamburgers

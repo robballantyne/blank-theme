@@ -212,6 +212,8 @@ a:visited:hover, a:visited:focus {
 }
 
 .main-container {
+  padding-left: 0;
+  padding-right: 0;
   min-height: 80vh;
   background-color: #eee;
 }
@@ -609,7 +611,7 @@ nav.slideout-menu ul li.active a:hover, nav.slideout-menu ul li.active a:focus {
           flex-direction: column;
 }
 
-@media all and (min-width: 900px) {
+@media (min-width: 992px) {
   .gdpr-cookie-manager {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;

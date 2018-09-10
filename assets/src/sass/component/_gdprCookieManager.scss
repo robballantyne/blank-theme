@@ -2,7 +2,7 @@
   background-color: #fff;
   display: flex!important;
   flex-direction: column;
-  @media all and (min-width: 900px) {
+  @include breakpoint-md-plus {
     flex-direction: row;
   }
   .gdpr-cookie-manager__groups {
