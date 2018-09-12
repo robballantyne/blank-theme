@@ -20,8 +20,6 @@
   },
   "homepage": "https://github.com/robballantyne/october-theme-blank#readme",
   "devDependencies": {
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "copy-webpack-plugin": "^4.5.2",
     "glob-all": "^3.1.0",
     "imagemin-mozjpeg": "^7.0.0",
