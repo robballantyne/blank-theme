@@ -71,14 +71,11 @@ formId = 1
     </div>
 </div>
 
-<script src="{{ 'assets/dist/js/manifest.js' | theme }}"></script>
-<script src="{{ 'assets/dist/js/vendor.js' | theme }}"></script>
-<script src="{{ 'assets/dist/js/app.js' | theme }}"></script>
-{% scripts %}
-
 <div id="gdpr-reload">
     {% partial 'gdpr' %}
 </div>
+
+{% partial 'scripts' %}
 </body>
 
 </html>

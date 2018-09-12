@@ -54,14 +54,14 @@ mix
     //    }
      })
 
-
-    .js('assets/src/js/vendor.js', 'assets/dist/js/')
     .js('assets/src/js/app.js', 'assets/dist/js/')
     .sass('assets/src/sass/vendor.scss', 'assets/dist/css/')
     .sass('assets/src/sass/app.scss', 'assets/dist/css/')
     .extract([
         'jquery',
-        'slideout'
+        'slideout',
+        'izimodal',
+        'select2'
     ])
     .sourceMaps();
 

@@ -1,9 +1,13 @@
-try {
-    window.$ = window.jQuery = require('jquery');
-    // Load jquery dependencies
-    require('./scripts/init');
+import $ from 'jquery';
+window.$ = window.jQuery = $;
 
-} catch (e) {
-    console.log('jQuery not loaded');
-}
+window.Slideout = Slideout;
+import * as Slideout from 'slideout';
 
+import * as iziModal from 'izimodal';
+$.fn.iziModal = iziModal;
+
+import * as select2 from 'select2';
+window.select2 = select2;
+
+require('./scripts/init');
