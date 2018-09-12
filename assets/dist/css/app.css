@@ -546,6 +546,11 @@ button.hamburger {
   background: transparent;
 }
 
+button.hamburger .hamburger-inner, button.hamburger .hamburger-inner::before, button.hamburger .hamburger-inner::after {
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+}
+
 .slideout-panel {
   position: relative;
   z-index: 1;

@@ -17,5 +17,8 @@ button {
   }
   &.hamburger {
       background: transparent;
+    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+      transition-duration: 0.5s;
+    }
   }
 }
