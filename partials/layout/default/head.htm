@@ -1,6 +1,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>{{ this.page.title }}</title>
+
+<title>
+    {% placeholder metaTitle default %}
+        My website
+    {% endplaceholder %}
+    | {{ this.theme.site_name }}</title>
+
+<meta name="description" content="
+{% placeholder metaDescription default %}
+The default meta description for my website which should be changed immediately
+{% endplaceholder %}
+">
 
 {# Load very common libraries from their CDN as quite likely cached #}
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">

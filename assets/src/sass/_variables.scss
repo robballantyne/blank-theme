@@ -18,7 +18,7 @@ $font-weight-bold: 700;
 
 
 /// Colors ///
-$bg-outside: #eee;
+$bg-outside: #fff;
 $bg-primary: #fff;
 $bg-brand-primary: #1da0c1;
 $color-over-brand: #fff;
@@ -37,7 +37,7 @@ $bg-main: $bg-primary;
 $bg-footer-container: $bg-brand-primary;
 $bg-footer: inherit;
 
-    // Menus
+// Menus
 $color-desktop-menu: $bg-brand-primary;
 $color-desktop-menu-highlighted: lighten($color-desktop-menu, 20%);
 $color-desktop-menu-active: lighten($color-desktop-menu, 22%);
@@ -53,7 +53,24 @@ $color-slideout-menu-active: lighten($bg-brand-primary, 30%);
 $bg-slideout-menu-highlighted: lighten($bg-brand-primary, 20%);
 $bg-slideout-menu-active: lighten($bg-brand-primary, 20%);
 
-    // Modals
+// Buttons
+$bg-button: transparent;
+$color-button: $bg-brand-primary;
+$color-button-border: $color-button;
+
+$bg-button-active: $bg-brand-primary;
+$color-button-active: #fff;
+$color-button-border-active: #fff;
+
+$bg-button-alt: transparent;
+$color-button-alt: #fff;
+$color-button-border-alt: $color-button-alt;
+
+$bg-button-active-alt: #fff;
+$color-button-active-alt: $bg-brand-primary;
+$color-button-border-active-alt: #fff;
+
+  // Modals
 $bg-iziModal-header: $bg-brand-primary;
 $color-iziModal-header: #fff;
 

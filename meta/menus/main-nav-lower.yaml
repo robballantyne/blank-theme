@@ -13,29 +13,3 @@ items:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
-    -
-        title: 'Image Slider'
-        nesting: ''
-        type: cms-page
-        url: ''
-        code: ''
-        reference: image-slider
-        cmsPage: ''
-        replace: ''
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-    -
-        title: 'Photo Gallery'
-        nesting: ''
-        type: cms-page
-        url: ''
-        code: ''
-        reference: photo-gallery
-        cmsPage: ''
-        replace: ''
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'

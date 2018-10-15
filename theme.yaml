@@ -29,3 +29,33 @@ form:
         tab: Analytics
         label: Google Analytics tracking ID
         placeholder: UA-12345678-01
+
+      site_owner:
+        tab: Operator Details
+        label: Site Owner
+      site_owner_type:
+        tab: Operator Details
+        label: Owner Type
+        type: dropdown
+        options:
+          company: Company
+          partnership: Partnership
+          private: Private Individual / Org
+          sole_trader: Sole Trader
+      site_owner_company_number:
+        tab: Operator Details
+        label: Company Number
+      site_owner_vat_number:
+        tab: Operator Details
+        label: VAT Number
+      site_owner_email:
+        tab: Operator Details
+        label: Email Address
+      site_owner_telephone:
+        tab: Operator Details
+        label: Telephone Number
+      site_owner_business_address:
+        tab: Operator Details
+        label: Business Address
+        type: richeditor
+        size: small

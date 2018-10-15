@@ -1,13 +1,37 @@
 <footer class="container">
-    <div class="grid align-center">
-        <div class="col-12">
-            <p>This is the footer</p>
-            <p>This is the footer</p>
-            <p>This is the footer</p>
+    <div class="grid align-start">
+        <div class="col-12 col-md-4">
+            <h4>Block 1</h4>
+            {# Put a menu here #}
+            <ul>
+                <li><a href="#">Put a menu here</a></li>
+            </ul>
         </div>
 
+        <div class="col-12 col-md-4">
+            <h4>Legal & Compliance</h4>
+            {% component 'staticMenuFooterLegal' %}
+        </div>
+
+        <div class="col-12 col-md-4">
+            <h4>Contact Us</h4>
+            <ul>
+                <li><a href="tel:{{ this.theme.site_owner_telephone }}">Call us on {{ this.theme.site_owner_telephone }}</a></li>
+                <li>Or</li>
+                <li><a class="izimodal-trigger-contact" href="#_">Leave a message</a></li>
+
+            </ul>
+        </div>
+
+        <div class="col-12">
+            {% if this.theme.site_owner_type == 'company' %}
+                <p class="owner-info">{{ this.theme.site_owner }} is a company registered in England and Wales with company number {{ this.theme.site_owner_company_number }}.</p>
+            {% endif %}
+        </div>
     </div>
-    <p class="by-line">
-        Website by <a href="http://dynamedia.uk">Dynamedia</a>
-    </p>
+    <div col-12>
+        <p class="by-line">
+            Website by <a href="https://dynamedia.uk?utm_source={{ this.theme.site_name | url_encode }}&utm_medium=Footer%20Link&utm_campaign=Client%20Site">Dynamedia</a>
+        </p>
+    </div>
 </footer>

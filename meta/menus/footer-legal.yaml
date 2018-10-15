@@ -1,0 +1,29 @@
+name: 'Footer Legal'
+items:
+    -
+        title: 'Terms & Conditions'
+        type: cms-page
+        code: ''
+        reference: terms-conditions
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Privacy Policy'
+        type: cms-page
+        code: ''
+        reference: privacy-policy
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Cookies
+        type: cms-page
+        code: ''
+        reference: cookies
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

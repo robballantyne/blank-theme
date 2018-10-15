@@ -1,45 +1,6 @@
 name: 'Main Nav Upper'
 items:
     -
-        title: 'Page One'
-        nesting: ''
-        type: cms-page
-        url: ''
-        code: ''
-        reference: page-one
-        cmsPage: ''
-        replace: ''
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-    -
-        title: 'Page Two'
-        nesting: ''
-        type: cms-page
-        url: ''
-        code: ''
-        reference: page-two
-        cmsPage: ''
-        replace: ''
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-    -
-        title: 'Page Three'
-        nesting: ''
-        type: cms-page
-        url: ''
-        code: ''
-        reference: page-three
-        cmsPage: ''
-        replace: ''
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
-            isExternal: '0'
-    -
         title: 'Contact Us'
         nesting: ''
         type: url
@@ -51,15 +12,4 @@ items:
         viewBag:
             isHidden: '0'
             cssClass: izimodal-trigger-contact
-            isExternal: '0'
-    -
-        title: 'All Categories'
-        nesting: '1'
-        type: dynamedia-items-categories-all
-        code: ''
-        cmsPage: services-list
-        replace: '0'
-        viewBag:
-            isHidden: '0'
-            cssClass: ''
             isExternal: '0'

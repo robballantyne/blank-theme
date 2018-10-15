@@ -1,24 +1,80 @@
-button {
-  transition: 0.3s;
-  display: block;
+button, a.button {
+  display: flex;
+  cursor: pointer;
+  position: relative;
   box-sizing: border-box;
   margin: 0 auto;
-  background-color: $bg-brand-primary;
-  border: 1px solid #fff;
+  padding: 5px 15px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  border: 2px solid $color-button-border;
   border-radius: 4px;
-  color: #fff;
   height: 3rem;
   font-size: 1.5rem;
-  padding: 5px 15px;
-
-  &:focus, &:hover {
-    background-color: lighten($bg-brand-primary, 10%);
-    cursor: pointer;
+  z-index: 1;
+  background-color: transparent;
+  color: $color-button;
+  transition: color 0.5s ease-in-out, border 0.3s ease-in-out, background 0.3s ease-in-out;
+  &:hover, &:focus {
+    color: $color-button-active;
+    background-color: $bg-button-active;
+    border-color: 2px solid $color-button-border-active;
   }
+  &.alt {
+    color: $color-button-alt;
+    background-color: $bg-button-alt;
+    border: 2px solid $color-button-border-alt;
+    &:hover, &:focus {
+      color: $color-button-active-alt;
+      background-color: $bg-button-active-alt;
+      border-color: 2px solid $color-button-border-active-alt;
+    }
+  }
+
+  &.slide {
+    &:before {
+      content: '';
+      transition: width 0.35s ease-in-out;
+      z-index: -1;
+      left: 0;
+      position: absolute;
+      height: 100%;
+      width: 0;
+      background-color: $bg-button-active;
+    }
+    &.alt {
+      &:before {
+        background-color: $bg-button-active-alt;
+      }
+    }
+    &:focus, &:hover {
+      background-color: inherit;
+      &:before {
+        width: 100%;
+      }
+    }
+  }
+
+
   &.hamburger {
-      background: transparent;
+    background: transparent;
     .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
       transition-duration: 0.5s;
     }
+  }
+  &.side-by-side {
+    width: 220px;
+  }
+}
+.button-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  button, .button {
+    margin: 10px 10px;
   }
 }

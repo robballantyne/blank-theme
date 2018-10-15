@@ -16,6 +16,9 @@ code = "main-nav-lower"
 [staticMenu staticMenuMobileNav]
 code = "mobile-nav"
 
+[staticMenu staticMenuFooterLegal]
+code = "footer-legal"
+
 [ContactForm]
 formId = 1
 ==
@@ -39,15 +42,8 @@ formId = 1
 
 <div id="slideout-wrapper">
     <div class="container-full main-container">
-        <main class="container">
-            <div class="grid">
-                <div class="col-12">
-                    {% page %}
-                </div>
-            </div>
-        </main>
+        {% page %}
     </div>
-
 </div>
 
 <div class="container-full footer-container slideoutMoveMe">
@@ -56,7 +52,7 @@ formId = 1
 
 <nav class="grid grid-bleed" id="slideout-menu">
     <div class="col-12">
-        {% partial 'navigation/mobile-nav' %}
+        {% component 'staticMenuMobileNav' %}
     </div>
 </nav>
 

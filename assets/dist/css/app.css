@@ -225,7 +225,7 @@ a:visited:hover, a:visited:focus {
 
 .main-container {
   min-height: 80vh;
-  background-color: #eee;
+  background-color: #fff;
 }
 
 .main-container main {
@@ -242,6 +242,21 @@ a:visited:hover, a:visited:focus {
   position: relative;
   background-color: inherit;
   color: #fff;
+}
+
+.footer-container footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-container footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-container footer p.owner-info {
+  text-align: center;
+  text-align-last: center;
 }
 
 .footer-container footer .by-line {
@@ -521,34 +536,108 @@ form .wrap.select .select2-container .select2-selection--single .select2-selecti
   height: 100%;
 }
 
-button {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  display: block;
+button, a.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  position: relative;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0 auto;
-  background-color: #1da0c1;
-  border: 1px solid #fff;
+  padding: 5px 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  border: 2px solid #1da0c1;
   border-radius: 4px;
-  color: #fff;
   height: 3rem;
   font-size: 1.5rem;
-  padding: 5px 15px;
+  z-index: 1;
+  background-color: transparent;
+  color: #1da0c1;
+  -webkit-transition: color 0.5s ease-in-out, border 0.3s ease-in-out, background 0.3s ease-in-out;
+  transition: color 0.5s ease-in-out, border 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 
-button:focus, button:hover {
-  background-color: #31bde0;
-  cursor: pointer;
+button:hover, button:focus, a.button:hover, a.button:focus {
+  color: #fff;
+  background-color: #1da0c1;
+  border-color: 2px solid #fff;
 }
 
-button.hamburger {
+button.alt, a.button.alt {
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+
+button.alt:hover, button.alt:focus, a.button.alt:hover, a.button.alt:focus {
+  color: #1da0c1;
+  background-color: #fff;
+  border-color: 2px solid #fff;
+}
+
+button.slide:before, a.button.slide:before {
+  content: '';
+  -webkit-transition: width 0.35s ease-in-out;
+  transition: width 0.35s ease-in-out;
+  z-index: -1;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background-color: #1da0c1;
+}
+
+button.slide.alt:before, a.button.slide.alt:before {
+  background-color: #fff;
+}
+
+button.slide:focus, button.slide:hover, a.button.slide:focus, a.button.slide:hover {
+  background-color: inherit;
+}
+
+button.slide:focus:before, button.slide:hover:before, a.button.slide:focus:before, a.button.slide:hover:before {
+  width: 100%;
+}
+
+button.hamburger, a.button.hamburger {
   background: transparent;
 }
 
-button.hamburger .hamburger-inner, button.hamburger .hamburger-inner::before, button.hamburger .hamburger-inner::after {
+button.hamburger .hamburger-inner, button.hamburger .hamburger-inner::before, button.hamburger .hamburger-inner::after, a.button.hamburger .hamburger-inner, a.button.hamburger .hamburger-inner::before, a.button.hamburger .hamburger-inner::after {
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
+}
+
+button.side-by-side, a.button.side-by-side {
+  width: 220px;
+}
+
+.button-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.button-wrap button, .button-wrap .button {
+  margin: 10px 10px;
 }
 
 .slideout-panel {
