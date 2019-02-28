@@ -1,43 +1,56 @@
-.footer-container {
-  position: relative;
-  z-index: $z-index-higher;
-  @if($debug-containers == true) {
-    border: 2px solid red;
-  }
-  //min-height: 20vh;
-  background-color: $bg-footer-container;
-  footer {
-    @if($debug-containers == true) {
-      border: 2px solid blue;
-    }
-    position: relative;
-    background-color: $bg-footer;
-    color: $color-over-brand;
-    a {
-      color:inherit;
-      text-decoration: none;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    p {
-      &.owner-info {
+$footer-bg-color: pink !default;
+$footer-main-bg-color: $footer-bg-color !default;
+$footer-main-inner-bg-color: transparent !default;
+$footer-below-bg-color: yellow !default;
+$footer-below-inner-bg-color: transparent !default;
+footer {
+  background-color: $footer-bg-color;
+  #footer-main {
+    background-color: $footer-main-bg-color;
+    // Inner footer container
+    .container {
+      background-color: $footer-main-inner-bg-color;
+
+      // Wrap the contents within the col to enable coloured backgrounds without bleeding
+      .link-section {
+        // Text align center to achieve left aligned text within a centered ul
         text-align: center;
         text-align-last: center;
-      }
-    }
-    .by-line {
-      margin: 10px;
-      position: absolute;
-      bottom:5px;
-      right:25px;
-      text-align: right;
-      color: #fff;
-      a {
-        color:inherit;
+        padding: 15px;
+        background-color: yellow;
+
+        h1, h2, h3, h4, h5 {
+          text-align: center;
+          text-align-last: center;
+        }
+
+        ul {
+          display: inline-block;
+          max-width: 100%;
+          padding: 10px;
+          margin-top: 0;
+          text-align: left;
+          text-align-last: left;
+
+          li {
+            text-align: left;
+            text-align-last: left;
+            list-style: none;
+          }
+        }
       }
     }
   }
-
+  #footer-below {
+    background-color: $footer-below-bg-color;
+    .container {
+      background-color: $footer-below-inner-bg-color;
+      .by-line {
+        p {
+          text-align: center;
+          text-align-last: center;
+        }
+      }
+    }
+  }
 }

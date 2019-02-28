@@ -1,0 +1,46 @@
+$hamburger-top-bar-color: blue !default;
+$hamburger-middle-bar-color: green !default;
+$hamburger-bottom-bar-color: yellow !default;
+$hamburger-close-color: red !default;
+button {
+  &.hamburger {
+    background: transparent;
+    outline: none;
+    height: 24px;
+    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+      transition-duration: 0.5s;
+    }
+    .hamburger-inner {
+      background-color: $hamburger-top-bar-color;
+      &:before {
+        background-color: $hamburger-middle-bar-color;
+      }
+      &:after {
+        background-color: $hamburger-bottom-bar-color;
+      }
+    }
+    &:hover, &:focus {
+      .hamburger-inner {
+        background-color: lighten($hamburger-top-bar-color, 20%);
+
+        &:before {
+          background-color: lighten($hamburger-middle-bar-color, 20%);
+        }
+
+        &:after {
+          background-color: lighten($hamburger-bottom-bar-color, 20%);
+        }
+      }
+    }
+    &.is-active {
+      .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+        background-color: $hamburger-close-color;
+      }
+      &:hover, &:focus {
+        .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+          background-color: lighten($hamburger-close-color,20%);
+        }
+      }
+    }
+  }
+}

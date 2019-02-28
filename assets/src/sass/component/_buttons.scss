@@ -18,15 +18,18 @@ button, a.button {
   background-color: transparent;
   color: $color-button;
   transition: color 0.5s ease-in-out, border 0.3s ease-in-out, background 0.3s ease-in-out;
+
   &:hover, &:focus {
     color: $color-button-active;
     background-color: $bg-button-active;
     border-color: 2px solid $color-button-border-active;
   }
+
   &.alt {
     color: $color-button-alt;
     background-color: $bg-button-alt;
     border: 2px solid $color-button-border-alt;
+
     &:hover, &:focus {
       color: $color-button-active-alt;
       background-color: $bg-button-active-alt;
@@ -45,30 +48,23 @@ button, a.button {
       width: 0;
       background-color: $bg-button-active;
     }
+
     &.alt {
       &:before {
         background-color: $bg-button-active-alt;
       }
     }
+
     &:focus, &:hover {
       background-color: inherit;
+
       &:before {
         width: 100%;
       }
     }
   }
-
-
-  &.hamburger {
-    background: transparent;
-    .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
-      transition-duration: 0.5s;
-    }
-  }
-  &.side-by-side {
-    width: 220px;
-  }
 }
+
 .button-wrap {
   display: flex;
   flex-direction: row;

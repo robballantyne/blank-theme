@@ -4,13 +4,15 @@ layout = "default"
 is_hidden = 0
 ==
 
-<div class="container">
-<div class="grid">
-<div class="col-12">
+{% put page_title %}
+    Terms & Conditions
+{% endput %}
 
-    {% put pageTitle %}
-    Privacy policy
-    {%  endput %}
+{% put meta_title %}
+    {{ this.theme.site_name }} Privacy Policy
+{% endput %}
+
+<div class="col-12 rocketlawyer">
     <h2>Introduction</h2>
     <p>This privacy policy applies between you, the User of this Website and {{ this.theme.site_owner }}, the owner and provider
         of this Website. {{ this.theme.site_owner }} takes the privacy of your information very seriously. This privacy policy
@@ -500,6 +502,4 @@ is_hidden = 0
         <p><b>01 October 2018</b></p>
     </ol>
 
-</div>
-</div>
 </div>

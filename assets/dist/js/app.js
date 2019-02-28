@@ -2,44 +2,55 @@ webpackJsonp([1],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
-/* 3 */,
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(5);
+__webpack_require__(4);
 __webpack_require__(10);
 module.exports = __webpack_require__(11);
 
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_jquery__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_slideout__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_slideout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_slideout__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_izimodal__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_izimodal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_izimodal__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_select2__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_select2__);
-
-window.$ = window.jQuery = __WEBPACK_IMPORTED_MODULE_0_jquery___default.a;
-
-window.Slideout = __WEBPACK_IMPORTED_MODULE_1_slideout__;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_slideout__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_slideout___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_slideout__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_izimodal__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_izimodal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_izimodal__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_select2__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_select2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_select2__);
 
 
+window.SlideoutLeft = new __WEBPACK_IMPORTED_MODULE_0_slideout___default.a({
+    'panel': document.getElementById('slideout-panel'),
+    'menu': document.getElementById('slideout-menu-left'),
+    'padding': 256,
+    'tolerance': 70
+});
 
-__WEBPACK_IMPORTED_MODULE_0_jquery___default.a.fn.iziModal = __WEBPACK_IMPORTED_MODULE_2_izimodal__;
+window.SlideoutRight = new __WEBPACK_IMPORTED_MODULE_0_slideout___default.a({
+    'panel': document.getElementById('slideout-panel'),
+    'menu': document.getElementById('slideout-menu-right'),
+    'padding': 256,
+    'tolerance': 70,
+    'side': 'right'
+});
 
 
-window.select2 = __WEBPACK_IMPORTED_MODULE_3_select2__;
+$.fn.iziModal = __WEBPACK_IMPORTED_MODULE_1_izimodal__;
 
+
+window.select2 = __WEBPACK_IMPORTED_MODULE_2_select2__;
+
+__webpack_require__(20);
+__webpack_require__(19);
 __webpack_require__(9);
 
 /***/ }),
+/* 5 */,
 /* 6 */,
 /* 7 */,
 /* 8 */,
@@ -47,93 +58,6 @@ __webpack_require__(9);
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-
-    /// Slideout.js ///
-
-    disableSlideoutOn('.gdpr-cookie-manager__cookies');
-    var moveFixedElements = true;
-    var width = 240;
-    var side = 'right';
-    var slideoutMenu = new Slideout({
-        'panel': document.getElementById('slideout-wrapper'),
-        'menu': document.getElementById('slideout-menu'),
-        'padding': width,
-        'tolerance': 70,
-        'easing': 'cubic-bezier(.32,2,.55,.27)',
-        'side': side
-    });
-
-    if (side == 'right') {
-        var translate = width - width - width;
-    } else {
-        var translate = width;
-    }
-
-    if (moveFixedElements === true) {
-        var $moveMe = $('.slideoutMoveMe');
-
-        if ($moveMe !== null) {
-
-            slideoutMenu.on('translate', function (translate) {
-                $moveMe.each(function () {
-                    $(this).css({
-                        transform: 'translateX(' + translate + 'px)'
-                    });
-                });
-            });
-
-            slideoutMenu.on('beforeopen', function () {
-                $("#hidden-menu-trigger button").addClass('is-active');
-                $("#hidden-menu-trigger button").attr('aria-expanded', true);
-                $moveMe.each(function () {
-                    $(this).css({
-                        transition: 'transform 300ms ease',
-                        transform: 'translateX(' + translate + 'px)'
-                    });
-                });
-            });
-
-            slideoutMenu.on('beforeclose', function () {
-                $("#hidden-menu-trigger button").removeClass('is-active');
-                $("#hidden-menu-trigger button").attr('aria-expanded', false);
-                $moveMe.each(function () {
-                    $(this).css({
-                        transition: 'transform 300ms ease',
-                        transform: 'translateX(0px)'
-                    });
-                });
-            });
-
-            slideoutMenu.on('open', function () {
-                $moveMe.each(function () {
-                    $(this).css({
-                        transition: ''
-                    });
-                });
-            });
-
-            slideoutMenu.on('close', function () {
-                $("#hidden-menu-trigger button").blur();
-                $moveMe.each(function () {
-                    $(this).css({
-                        transition: ''
-                    });
-                });
-            });
-        }
-    }
-
-    /// End Slideout.js
-
-    // Hidden menu logic TODO set correct status if starting with an expanded menu
-    $("#hidden-menu-trigger button").click(function () {
-        $(this).blur();
-        if ($(this).hasClass('is-active')) {
-            slideoutMenu.close();
-        } else {
-            slideoutMenu.open();
-        }
-    });
 
     padBody();
 
@@ -152,53 +76,53 @@ $(document).ready(function () {
         });
     });
     createAlertModals();
-    select2init();
     unwrapImages();
-    prepareMainMenu();
+});
+
+// Maintain information about how far the user has scrolled down the page
+window.addEventListener("scroll", debounce(function () {
+    var html = document.documentElement;
+    var scrollDistance = html.scrollTop;
+    html.setAttribute("data-scrolled", scrollDistance);
+    fixedHeaderSize(scrollDistance, 50, "shrink");
+}, 50));
+
+var mutationObserver = new MutationObserver(function (mutations) {
+    mutations.forEach(function (mutation) {
+        var classes = mutation.target.classList;
+        var oldClasses = mutation.oldValue;
+        if (classes.contains('shrink') && !oldClasses.includes("shrink")) {
+            console.log('shrinking...');
+            setTimeout(padBody, 0);
+        }
+        if (!classes.contains('shrink') && oldClasses.includes("shrink")) {
+            console.log('growing...');
+            setTimeout(padBody, 0);
+        }
+    });
+});
+
+mutationObserver.observe(document.getElementById('fixed-header'), {
+    attributes: true,
+    characterData: true,
+    childList: true,
+    subtree: true,
+    attributeOldValue: true,
+    attributeFilter: ['class'],
+    characterDataOldValue: true
 });
 
 $(window).resize(function () {
     padBody();
-    select2init();
 });
-
-// Desktop menu open/close logic
-$('nav ul').on('click focus mouseenter', 'li.dropdown a', function (e) {
-    var $initiator = $(this);
-
-    if (!$initiator.closest('li.dropdown').hasClass('open')) {
-        e.preventDefault();
-    }
-    setTimeout(function () {
-        $initiator.closest('li.dropdown').siblings().removeClass('open').find('li').removeClass('open');
-        $initiator.closest('li.dropdown').children().removeClass('open').find('li').removeClass('open');
-        $initiator.closest('li.dropdown').addClass("open");
-        $('body').addClass('menu-open');
-    }, 200, $initiator);
-});
-
-$(document).on('click focus', 'body.menu-open', function (e) {
-    if ($(e.target).closest('li.open').length === 0) {
-        $('li.open').removeClass('open');
-        $('body').removeClass('menu-open');
-    }
-});
-
-$(document).keyup(function (e) {
-    if (e.keyCode == 27) {
-        // escape key maps to keycode `27`
-        $('li.open').removeClass('open');
-        $('body').removeClass('menu-open');
-    }
-});
-// End desktop menu logic
 
 // Add padding-top equal to the height of a fixed header to the body
-function padBody() {
-    if ($('.header-container').hasClass('fixed')) {
-        $('body').css('padding-top', $('.header-container').height());
-    }
-}
+// function padBody()
+// {
+//     if ($('header').hasClass('fixed')) {
+//         $('body').css('padding-top', $('header.fixed').height());
+//     }
+// }
 
 // Select2 for form select elements
 function select2init(delay) {
@@ -259,19 +183,9 @@ function unwrapImages() {
     });
 }
 
-function prepareMainMenu() {
-    $("nav ul li:has(ul)").addClass('dropdown');
-    $("nav ul li.dropdown:first > a").append(" <i class='fa fa-caret-down'></i>");
-    $("nav ul li.dropdown:not(:first) > a").append(" <i class='fa fa-caret-right'></i>");
-}
-
 $('.izimodal-trigger-contact').on('click', function () {
     $('#contact-modal').iziModal('open');
 });
-
-function disableSlideoutOn(identifier) {
-    $(identifier).attr('data-slideout-ignore', '');
-}
 
 $(document).on('ajaxSetup', function (event, context) {
     // Pass october flash messages on to iziModal to make things prettier
@@ -294,6 +208,169 @@ $(document).on('ajaxSetup', function (event, context) {
 
 // removed by extract-text-webpack-plugin
 
+/***/ }),
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */
+/***/ (function(module, exports) {
+
+$menuLiWithChildren = $('li.has-children');
+$menuLiWithChildren.each(function () {
+    $(this).append("<a class=\"expander\" href=\"#_\"></a>");
+    $(this).find('ul').prop("hidden", true);
+});
+
+$("a.expander").on("click", function () {
+    toggleInnerMenuDropdown($(this), 'open');
+});
+
+function toggleInnerMenuDropdown($initiator, activeClass, $target) {
+    $parentLi = $initiator.closest('li');
+    if (typeof $target == 'undefined') {
+        $target = $parentLi.children('ul');
+    }
+
+    if (typeof activeClass == 'undefined') {
+        activeClass = "active";
+    }
+
+    // Close the open menu
+    if ($target.hasClass(activeClass)) {
+        $target.removeClass(activeClass);
+        $target.css("max-height", 0);
+        var menuTimerClose = setTimeout(function () {
+            $target.prop("hidden", true);
+            $initiator.removeClass(activeClass);
+        }, 300);
+
+        // Open the menu
+    } else {
+        clearTimeout(menuTimerClose);
+        $initiator.addClass(activeClass);
+        $target.prop("hidden", false);
+        var menuTimerOpen = setTimeout(function () {
+            $target.addClass(activeClass);
+
+            // Get height of this element plus all of it's children
+            maxHeight = $target.prop("scrollHeight");
+            $target.children().each(function () {
+                maxHeight = maxHeight + $(this).prop("scrollHeight");
+            });
+
+            parentMaxHeight = parseInt($target.parents('li.has-children ul').css("max-height")) + maxHeight;
+
+            $target.parents('li.has-children ul').css("max-height", parentMaxHeight);
+
+            $target.css("max-height", maxHeight);
+        }, 10);
+    }
+}
+
+$('.hamburger.dropdown').on("click", function () {
+    if ($(this).attr("data-targets") == "hidden-rolldown-main") {
+        toggleInnerMenuDropdown($(this), "is-active", $("#hidden-rolldown-main"));
+    }
+});
+
+$('.hamburger.slideout').on("click", function () {
+    if ($(this).attr("data-targets") == "slideout-menu-left") {
+        window.SlideoutLeft.toggle();
+    }
+    if ($(this).attr("data-targets") == "slideout-menu-right") {
+        window.SlideoutRight.toggle();
+    }
+});
+
+SlideoutLeft.on("beforeopen", function () {
+    var htmlId = $(this)[0].menu.id;
+    var $button = $("button[data-targets=" + htmlId + "]");
+    $button.addClass('is-active');
+    $(this)[0].menu.classList.add("open");
+});
+
+SlideoutLeft.on("close", function () {
+    var htmlId = $(this)[0].menu.id;
+    var $button = $("button[data-targets=" + htmlId + "]");
+    $button.removeClass('is-active');
+    $(this)[0].menu.classList.remove("open");
+});
+
+SlideoutRight.on("beforeopen", function () {
+    var htmlId = $(this)[0].menu.id;
+    var $button = $("button[data-targets=" + htmlId + "]");
+    $button.addClass('is-active');
+    $(this)[0].menu.classList.add("open");
+});
+
+SlideoutRight.on("close", function () {
+    var htmlId = $(this)[0].menu.id;
+    var $button = $("button[data-targets=" + htmlId + "]");
+    $button.removeClass('is-active');
+    $(this)[0].menu.classList.remove("open");
+});
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+// https://codeburst.io/throttling-and-debouncing-in-javascript-b01cad5c8edf
+debounce = function debounce(func, delay) {
+    var inDebounce = void 0;
+    return function () {
+        var context = this;
+        var args = arguments;
+        clearTimeout(inDebounce);
+        inDebounce = setTimeout(function () {
+            return func.apply(context, args);
+        }, delay);
+    };
+};
+
+throttle = function throttle(func, limit) {
+    var lastFunc = void 0;
+    var lastRan = void 0;
+    return function () {
+        var context = this;
+        var args = arguments;
+        if (!lastRan) {
+            func.apply(context, args);
+            lastRan = Date.now();
+        } else {
+            clearTimeout(lastFunc);
+            lastFunc = setTimeout(function () {
+                if (Date.now() - lastRan >= limit) {
+                    func.apply(context, args);
+                    lastRan = Date.now();
+                }
+            }, limit - (Date.now() - lastRan));
+        }
+    };
+};
+
+fixedHeaderSize = function fixedHeaderSize(scrollDistance, threshold, className) {
+    var fixedHeader = document.getElementById("fixed-header");
+    if (scrollDistance > threshold) {
+        fixedHeader.classList.add(className);
+        document.body.classList.add(className);
+    } else {
+        fixedHeader.classList.remove(className);
+        document.body.classList.remove(className);
+    }
+};
+
+padBody = function padBody() {
+    if ($('header').hasClass('fixed')) {
+        $('body').addClass("fixed-header");
+        var height = $('header.fixed').css('max-height');
+        $('body').css('padding-top', height);
+    }
+};
+
 /***/ })
-],[4]);
+],[3]);
 //# sourceMappingURL=app.js.map

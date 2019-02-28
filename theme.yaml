@@ -1,8 +1,8 @@
-name: Base Theme
+name: Starter Theme
 author: Dynamedia
 description: Base scaffold.
 homepage: 'https://dynamedia.uk'
-code: base
+code: starter
 
 require:
 - Rainlab.Pages
@@ -16,10 +16,50 @@ form:
   tabs:
     stretch: true
     fields:
+##### Site Detail
       site_name:
-        tab: Detail
+        tab: Site Detail
         label: Site Name
-        placeholder: Client site name
+        placeholder: Website name
+
+      site_owner:
+        tab: Operator Details
+        label: Site Owner
+
+      site_owner_type:
+        tab: Operator Details
+        label: Owner Type
+        type: dropdown
+        options:
+          company: Company
+          partnership: Partnership
+          private: Private Individual / Org
+          sole_trader: Sole Trader
+
+      site_owner_company_number:
+        tab: Operator Details
+        label: Company Number
+
+      site_owner_vat_number:
+        tab: Operator Details
+        label: VAT Number
+
+      site_owner_email:
+        tab: Operator Details
+        label: Email Address
+
+      site_owner_telephone:
+        tab: Operator Details
+        label: Telephone Number
+
+      site_owner_business_address:
+        tab: Operator Details
+        label: Business Address
+        type: richeditor
+        size: small
+
+##### Analytics
+
       is_ga_enabled:
         tab: Analytics
         type: switch
@@ -30,32 +70,19 @@ form:
         label: Google Analytics tracking ID
         placeholder: UA-12345678-01
 
-      site_owner:
-        tab: Operator Details
-        label: Site Owner
-      site_owner_type:
-        tab: Operator Details
-        label: Owner Type
-        type: dropdown
-        options:
-          company: Company
-          partnership: Partnership
-          private: Private Individual / Org
-          sole_trader: Sole Trader
-      site_owner_company_number:
-        tab: Operator Details
-        label: Company Number
-      site_owner_vat_number:
-        tab: Operator Details
-        label: VAT Number
-      site_owner_email:
-        tab: Operator Details
-        label: Email Address
-      site_owner_telephone:
-        tab: Operator Details
-        label: Telephone Number
-      site_owner_business_address:
-        tab: Operator Details
-        label: Business Address
-        type: richeditor
-        size: small
+##### Social Media
+
+      social_facebook_url:
+        tab: Social Media
+        label: Facebook URL
+      social_facebook_app_id:
+        tab: Social Media
+        label: Facebook App ID
+      social_twitter_url:
+        tab: Social Media
+        label: Twitter URL
+      social_twitter_username:
+        tab: Social Media
+        label: Twitter Username
+
+

@@ -1,0 +1,67 @@
+$menu-hidden-bg-color: #eee !default;
+@import "slideoutMenu";
+ul {
+  &.navigation-list {
+    padding-left: 0;
+    li {
+      list-style: none;
+      position: relative;
+      a {
+        display: inline-block;
+      }
+      &.has-children {
+        .expander {
+          position: absolute;
+          text-decoration: none;
+          right:0;
+          top:-1px;
+          &:after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content: '\f067';
+          }
+          &.open {
+            &:after {
+              content: '\f068';
+            }
+          }
+        }
+      }
+      ul {
+        display: block;
+        max-height:0;
+        transition: max-height 0.3s ease-in;
+        overflow: hidden;
+        padding-left: 10px;
+        &.open {
+          //max-height: 300px;
+        }
+        &.closing {
+          //max-height: 0;
+        }
+      }
+    }
+  }
+}
+
+nav {
+  &.hidden-rolldown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in;
+    background-color: $menu-hidden-bg-color;
+    padding-right: 10px;
+    text-align: center;
+    ul {
+      padding-left: 0;
+      display: inline-block;
+      text-align: left;
+      list-style: none;
+      li {
+        a {
+          line-height: 2;
+        }
+      }
+    }
+  }
+}

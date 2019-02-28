@@ -1,0 +1,11 @@
+{% if this.theme.is_ga_enabled and this.theme.ga_identifier %}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{this.theme.ga_identifier}}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ this.theme.ga_identifier }}');
+    </script>
+{% endif %}

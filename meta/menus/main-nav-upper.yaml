@@ -13,3 +13,67 @@ items:
             isHidden: '0'
             cssClass: izimodal-trigger-contact
             isExternal: '0'
+    -
+        title: 'Item One'
+        nesting: ''
+        type: url
+        url: '#_'
+        code: ''
+        reference: ''
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Item 3'
+        nesting: ''
+        type: url
+        url: '#_'
+        code: ''
+        reference: ''
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: 'Item 3 a'
+                nesting: ''
+                type: url
+                url: '#'
+                code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+                items:
+                    -
+                        title: 'Item 3 a 1'
+                        nesting: ''
+                        type: url
+                        url: '#_'
+                        code: ''
+                        reference: ''
+                        cmsPage: ''
+                        replace: ''
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                        items:
+                            -
+                                title: 'New menu item'
+                                type: url
+                                url: '#_'
+                                code: ''
+                                viewBag:
+                                    isHidden: '0'
+                                    cssClass: ''
+                                    isExternal: '0'

@@ -1,38 +1,92 @@
-.header-container {
-  @if($debug-containers == true) {
-    border: 2px solid red;
+$header-bg-color: pink !default;
+$header-main-bg-color: $header-bg-color !default;
+$header-main-inner-bg-color: transparent !default;
+$header-below-bg-color: yellow !default;
+$header-below-inner-bg-color: transparent !default;
+$header-fixed-large-height: 75px;
+$header-fixed-small-height: 50px;
+header {
+  &.flow {
+    // A background/image here will fill the whole header area so make all inner bg's transparent if that's what is required
+    background-color: $header-bg-color;
+
+    #header-main {
+      background-color: $header-main-bg-color;
+
+      .container {
+        background-color: $header-main-inner-bg-color;
+      }
+    }
+
+    #header-below {
+      background-color: $header-below-bg-color;
+
+      .container {
+        background-color: $header-below-inner-bg-color;
+      }
+    }
   }
-  background-color: $bg-header-container;
+
   &.fixed {
     position: fixed;
+    z-index: 1000;
+    height:$header-fixed-large-height;
+    max-height: $header-fixed-large-height; // Important because we will use javascript to refer back to this for a comparision
     top:0;
     left:0;
-    z-index: $z-index-highest;
-  }
-  header {
-    @if ($debug-containers == true) {
-      border: 2px solid blue;
+    width: 100%;
+    background-color: #333;
+    transition: all 0.3s ease-in;
+    .shrinks {
+      transition: all 0.3s ease-in;
+      transform: scale(1);
     }
-    background-color: $bg-header;
-    .brand-space {
-      a {
-        display: block;
-        max-width: 90%;
+    &.shrink {
+      height: $header-fixed-small-height;
+      .shrinks {
+        transform: scale(0.7);
       }
-      img {
-        &.logo {
+    }
+    .container-full, .container ,.grid, .shrink-wrap {
+      height: 100%;
+    }
+
+    div[class^="col-"] {
+      padding-top: 0;
+      padding-bottom: 0;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      height: 100%;
+      &.start {
+        justify-content: flex-start;
+      }
+      &.middle {
+        justify-content: center;
+        overflow: hidden;
+        h1,h2,h3,p {
+          display: flex;
+          align-items: center;
+          margin: 0 auto;
           width: 100%;
+          marquee {
+            width: 100%;
+          }
         }
       }
+      &.end {
+        justify-content: flex-end;
+      }
     }
-    @import "../component/navigation/desktop";
-    @import "../component/navigation/mobile";
-  }
-  &.scrolled {
-    background-color: $bg-header-container-scrolled;
-    color: #fff;
-    header {
-      background-color: $bg-header-scrolled;
+
+    a {
+      &.logo {
+        display: block;
+        height:60px;
+        img {
+          height:100%;
+        }
+      }
     }
   }
 }

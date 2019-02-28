@@ -13,7 +13,11 @@
 
 @import "component/forms";
 @import "component/buttons";
-@import "component/slideoutMenu";
 @import "component/gdprCookieManager";
 @import "component/blog";
 @import "component/iziModal";
+
+@import "component/navigation/general";
+@import "component/navigation/hamburgers";
+
+@import "utility";

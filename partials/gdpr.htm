@@ -1,6 +1,4 @@
-{%  if this.theme.is_ga_enabled %}
-    {% if gdprCookieAllowed('google-analytics') or gdprIsUndecided() %}
-        {% partial 'google/google-analytics' %}
-    {% endif %}
+{% if gdprCookieAllowed('google-analytics') or gdprIsUndecided() %}
+    {% partial 'libs/google-analytics' %}
 {% endif %}
 

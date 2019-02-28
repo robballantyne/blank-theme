@@ -23,38 +23,30 @@ code = "footer-legal"
 formId = 1
 ==
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-scrolled="0">
 
+{% spaceless %}
 <head>
     {% partial 'layout/default/head' %}
 </head>
+{% endspaceless %}
 
 <body>
 
-<div class="container-full header-container fixed slideoutMoveMe">
-    {% partial 'layout/default/header' %}
+{% partial 'layout/default/header-fixed' %}
+
+<div id="slideout-panel">
+{% partial 'layout/default/header' %}
+{% partial 'navigation/hamburger' %}
+{% partial 'navigation/mobile-rolldown' menuComponent="staticMenuMobileNav" %}
+{% partial 'layout/default/under-header' %}
+{% partial 'layout/default/page' %}
+{% partial 'layout/default/footer' %}
 </div>
 
-<div class="container-full under-header-container slideoutMoveMe">
-    {% partial 'layout/default/under-header' %}
-</div>
-
-
-<div id="slideout-wrapper">
-    <div class="container-full main-container">
-        {% page %}
-    </div>
-</div>
-
-<div class="container-full footer-container slideoutMoveMe">
-    {% partial 'layout/default/footer' %}
-</div>
-
-<nav class="grid grid-bleed" id="slideout-menu">
-    <div class="col-12">
-        {% component 'staticMenuMobileNav' %}
-    </div>
-</nav>
+{# These menus are kept outside of the main menu panel wrapper #}
+{% partial 'navigation/mobile-slideout-left' menuComponent="staticMenuMainNavUpper" %}
+{% partial 'navigation/mobile-slideout-right' menuComponent="staticMenuMainNavUpper" %}
 
 {% component 'cookieBanner' %}
 
@@ -67,6 +59,8 @@ formId = 1
     </div>
 </div>
 
+
+{# gdpr-reload div generally contains scripts which set cookies etc. #}
 <div id="gdpr-reload">
     {% partial 'gdpr' %}
 </div>
