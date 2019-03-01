@@ -1,8 +1,8 @@
-name: Starter Theme
+name: Base Theme
 author: Dynamedia
-description: Base scaffold.
+description: Base theme for adaptation.
 homepage: 'https://dynamedia.uk'
-code: starter
+code: base
 
 require:
 - Rainlab.Pages

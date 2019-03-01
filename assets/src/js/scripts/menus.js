@@ -92,3 +92,79 @@ SlideoutRight.on("close", function() {
     $button.removeClass('is-active');
     $(this)[0].menu.classList.remove("open");
 });
+
+
+var fixedElements = document.getElementsByClassName('slideout-shift');
+SlideoutRight.on('translate', function(translated) {
+    for(var i = 0; i < fixedElements.length; i++) {
+        let element = fixedElements.item(i);
+        element.style.transform = 'translateX(' + translated + 'px)';
+    }
+});
+
+SlideoutRight.on('beforeopen', function () {
+    for(var i = 0; i < fixedElements.length; i++) {
+        let element = fixedElements.item(i);
+        element.style.transition = 'transform 300ms ease';
+        element.style.transform = 'translateX(-256px)';
+    }
+});
+
+SlideoutRight.on('beforeclose', function () {
+    for(var i = 0; i < fixedElements.length; i++) {
+        let element = fixedElements.item(i);
+        element.style.transition = 'transform 300ms ease';
+        element.style.transform = 'translateX(0)';
+    }
+});
+
+SlideoutRight.on('open', function () {
+    for(var i = 0; i < fixedElements.length; i++) {
+        let element = fixedElements.item(i);
+        element.style.transition = '';
+    }
+});
+
+SlideoutRight.on('close', function () {
+    for(var i = 0; i < fixedElements.length; i++) {
+        let element = fixedElements.item(i);
+        element.style.transition = '';
+    }
+});
+
+SlideoutLeft.on('translate', function(translated) {
+    for(var i = 0; i < fixedElements.length; i++) {
+        let element = fixedElements.item(i);
+        element.style.transform = 'translateX(' + translated + 'px)';
+    }
+});
+
+SlideoutLeft.on('beforeopen', function () {
+    for(var i = 0; i < fixedElements.length; i++) {
+        let element = fixedElements.item(i);
+        element.style.transition = 'transform 300ms ease';
+        element.style.transform = 'translateX(256px)';
+    }
+});
+
+SlideoutLeft.on('beforeclose', function () {
+    for(var i = 0; i < fixedElements.length; i++) {
+        let element = fixedElements.item(i);
+        element.style.transition = 'transform 300ms ease';
+        element.style.transform = 'translateX(0)';
+    }
+});
+
+SlideoutLeft.on('open', function () {
+    for(var i = 0; i < fixedElements.length; i++) {
+        let element = fixedElements.item(i);
+        element.style.transition = '';
+    }
+});
+
+SlideoutLeft.on('close', function () {
+    for(var i = 0; i < fixedElements.length; i++) {
+        let element = fixedElements.item(i);
+        element.style.transition = '';
+    }
+});

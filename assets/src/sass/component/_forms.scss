@@ -1,10 +1,15 @@
+$form-input-active-border-color: pink;
+$form-input-border-color: lightgrey;
+$form-input-bg-color: white;
+$form-icon-bg-color: blue;
+$form-input-padding-left: 45px;
+$form-label-color: #888;
+$form-text-color: #666;
 form {
-  background-color: #fff;
-  color: #333;
   :focus {
     outline: none;
+    color: $form-text-color;
   }
-
   .wrap {
     position: relative;
     &.label-above {
@@ -12,15 +17,18 @@ form {
     }
 
     label {
+      position: relative;
       &.required {
         &:after {
+          position: absolute;
           font-family: 'Font Awesome 5 Free';
           content: '\f069'; //Asterisk
           font-weight: 900;
-          font-size: 0.6rem;
+          font-size: 0.4rem;
+          line-height: 1;
           color: red;
-          vertical-align: middle;
-          margin-left: 0.2rem;
+          top: 0;
+          margin-left:1px;
         }
       }
     }
@@ -35,14 +43,13 @@ form {
         line-height: $form-input-height;
         position: absolute;
         padding: 0 10px;
-        height: calc(#{$form-input-height} - 2px);
-        top:1px;
-        left: 1px;
+        height: 100%;
+        top: 0;
+        left: 0;
         border-top-left-radius: 4px;
         border-bottom-left-radius: 4px;
         background-color: $bg-brand-primary;
-        background-image: linear-gradient(to bottom, $bg-brand-primary, lighten($bg-brand-primary, 10%));
-        width:1rem;
+        width:20px;
       }
       &.name {
         &:before {
@@ -71,7 +78,6 @@ form {
       }
       &.text {
         &:before {
-          height: calc(#{$form-input-height * 3} - 2px);
           line-height: $form-input-height * 3;
           content: "\f0e0";
         }
@@ -79,33 +85,21 @@ form {
     }
 
     &.input {
-
-
       input {
-        box-sizing : border-box;
-        border: none;
-        border: 1px solid $form-border-color;
-        border-radius: 4px;
-        width: 100%;
         height: $form-input-height;
         line-height: $form-input-height;
         font-size: $form-input-font-size;
-        color: #333;
-        padding: $form-input-padding;
+        padding-left: $form-input-padding-left;
       }
     }
 
-    &.text {
       textarea {
-        box-sizing : border-box;
-        border-radius: 4px;
-        width: 100%;
         height: $form-input-height * 3;
+        display: block;
         resize: none;
-        color: #333;
-        padding: $form-input-padding;
+        padding-left: $form-input-padding-left;
       }
-    }
+
 
     &.select {
       select {
@@ -115,13 +109,13 @@ form {
         height: $form-input-height;
         line-height: $form-input-height;
         font-size: $form-input-font-size;
-        padding: $form-input-padding;
+        padding-left: $form-input-padding-left - 3px;
       }
 
       .select2-container {
         .select2-selection--single {
           height: $form-input-height;
-          padding: $form-input-padding;
+          padding-left: $form-input-padding-left;
           .select2-selection__rendered {
             line-height: $form-input-height;
             font-size: $form-input-font-size;
@@ -135,4 +129,23 @@ form {
     }
   }
 
+}
+
+textarea, input, select {
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid $form-input-border-color;
+  border-radius: 5px;
+  background-color: $form-input-bg-color;
+  color: $form-text-color;
+  width: 100%;
+  outline: none;
+  transition: box-shadow 0.3s, border-color 0.3s;
+  &:focus, &:focus:hover {
+    border-color: $form-input-active-border-color;
+    box-shadow: 0px 0px 5px 0px $form-input-active-border-color;
+  }
+  &:hover {
+    box-shadow: 0px 0px 5px 0px $form-input-border-color
+  }
 }

@@ -36,11 +36,9 @@ var mutationObserver = new MutationObserver(function(mutations) {
         var classes = mutation.target.classList;
         var oldClasses = mutation.oldValue;
         if (classes.contains('shrink') && ! oldClasses.includes("shrink")) {
-            console.log('shrinking...');
             setTimeout(padBody, 0)
         }
         if (! classes.contains('shrink') && oldClasses.includes("shrink")) {
-            console.log('growing...');
             setTimeout(padBody, 0)
         }
     });
