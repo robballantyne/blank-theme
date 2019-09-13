@@ -20,21 +20,21 @@
   },
   "homepage": "https://github.com/robballantyne/october-theme-blank#readme",
   "devDependencies": {
-    "copy-webpack-plugin": "^4.5.2",
+    "copy-webpack-plugin": "^4.6.0",
     "glob-all": "^3.1.0",
     "imagemin-mozjpeg": "^7.0.0",
-    "imagemin-webpack-plugin": "^2.1.5",
-    "laravel-mix": "^2.1.11",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "laravel-mix": "^2.1.14",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0"
   },
   "dependencies": {
     "hamburgers": "^0.9.3",
     "izimodal": "^1.5.1",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.1",
     "normalize-scss": "^7.0.1",
-    "reflex-grid": "^2.0.3",
-    "select2": "^4.0.6-rc.1",
+    "reflex-grid": "^2.0.4",
+    "select2": "^4.0.10",
     "slideout": "^1.0.1"
   }
 }

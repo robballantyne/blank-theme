@@ -10,6 +10,33 @@ $gdpr-banner-button-color: #fff !default;
   @include breakpoint-md-plus {
     flex-direction: row;
   }
+  select {
+    border-radius: 0;
+  }
+
+  button {
+    &.gdpr-cookie-manager__submit-button {
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+  .gdpr-cookie-manager__cookie-item {
+    border-bottom: 1px solid #e3e3e3;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    &:before, &:after {
+      content: none !important;
+    }
+  }
+
+  .gdpr-cookie-manager__group-list-entry {
+      background-color: #e0e0e0;
+    &.gdpr-cookie-manager__group-list-entry--active {
+      background-color: #fff;
+      color: lightblue;
+    }
+  }
+
   .gdpr-cookie-manager__groups {
     .gdpr-cookie-manager__group-list {
       .select2 {
@@ -19,11 +46,7 @@ $gdpr-banner-button-color: #fff !default;
           border: 1px solid #e3e3e3;
         }
       }
-      button {
-        &.gdpr-cookie-manager__submit-button {
-          width: 100%;
-        }
-      }
+
     }
   }
   .gdpr-cookie-manager__content {
@@ -67,90 +90,39 @@ $gdpr-banner-button-color: #fff !default;
 
 .gdpr-banner {
   position: fixed;
-  min-height: 30vh;
+  //min-height: 30vh;
   bottom:0;
   z-index: $z-index-exceptional;
   width: 100%;
   box-sizing: border-box;
-  padding: 0 10px;
-  background-color: rgba(255,255,255,0.9);
-  color: #333;
-  .gdpr-banner__wrapper {
-    position: relative;
-    padding-top:30px;
+  padding: 10px 10px;
+  background-color: rgba(255,255,255,0.85);
+  box-shadow: 0px -2px 6px 0px rgba(0,0,0,0.45);
+  color: #666;
 
-    .gdpr-banner__column--1 {
-      width: 100%;
-      text-align: center;
-    }
-
-    .gdpr-banner__column--2 {
-      min-height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    button {
-      color: $gdpr-banner-button-color;
-    }
-    .gdpr-banner__opt-out {
-      order: 2;
-      margin: 0 5px;
-      button {
-        transition: background-color 0.3s ease-in, border-color 0.3s ease-in;
-        background-color: $gdpr-banner-review-button-bg;
-        border-color: rgba($gdpr-banner-review-button-bg, 0.8);
-        &:hover, &:focus {
-          background-color: rgba($gdpr-banner-review-button-bg, 0.8);
-          border-color: rgba($gdpr-banner-review-button-bg, 0.3);
-        }
-      }
-    }
-
-    .gdpr-banner__opt-in {
-      margin: 0 5px;
-      button {
-        transition: background-color 0.3s ease-in, border-color 0.3s ease-in;
-        background-color: $gdpr-banner-accept-button-bg;
-        border-color: rgba($gdpr-banner-accept-button-bg, 0.8);
-        &:hover, &:focus {
-          background-color: rgba($gdpr-banner-accept-button-bg, 0.8);
-          border-color: rgba($gdpr-banner-accept-button-bg, 0.3);
-        }
-      }
-    }
-
-    .gdpr-banner__settings{
-      position: absolute;
-      bottom: 5px;
-      a {
+  .message {
+    text-align: left;
+    a {
+      &.settings {
         text-decoration: none;
-        color:#999;
-        &:before {
-          font-family: "Font Awesome 5 Free";
-          font-weight: 900;
-          font-size: 1.5rem;
-          color: #999;
-          content: '\f509';
-          text-decoration: none;
-        }
+        color: $bg-brand-primary;
       }
     }
-
-    .gdpr-banner__dismiss {
-      position: absolute;
-      top:-5px;
-      right: 5px;
+  }
+  .buttons {
+    text-align: right;
+    .opt-in {
       button {
-        transition: color 0.5s;
-        background-color: transparent;
-        outline: none;
-        border: none;
-        color: #999;
+        transition: background-color 0.5s;
+        background-color: rgba(#fff, 1);
+        font-size: 1rem;
+        color: $color-green;
         &:hover, &:focus {
-          color: lighten($gdpr-banner-close-button-color,20%);
+          background-color: rgba($color-green, 0.3);
+          color: #fff;
         }
+        color: $color-green;
+        border: 2px solid $color-green;
       }
     }
   }

@@ -1,4 +1,4 @@
-<div class="gdpr-banner__opt-in">
+<div class="opt-in">
     <button role="button" 
             tabindex="0" 
             aria-pressed="false"
@@ -12,6 +12,6 @@
             {% if not __SELF__.hardReload %}
                 data-request-update="'{{ __SELF__.updatePartial }}' : '{{ __SELF__.updateSelector }}'"
             {% endif %}>
-        {{ 'offline.gdpr::lang.cookie_banner.accept' | trans }}
+        OK!
     </button>
 </div>

@@ -1,3 +1,10 @@
-<div class="gdpr-banner__message">
-    We use cookies to help us provide the best possible experience when you use our website. Please choose whether to accept all cookies or review your settings.
+<div class="message">
+    We use cookies to help us provide the best possible experience when you use our website. You can
+    <a class="settings" role="link" rel="privacy" href="{{ __SELF__.cookieManagerPage | page }}"
+       data-request="onAccept"
+       data-request-success="document.location.href = '{{ __SELF__.cookieManagerPage | page }}'"
+    >
+    manage
+    </a>
+     cookie usage at any time.
 </div>
